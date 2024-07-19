@@ -72,20 +72,19 @@
   #     tree
   #   ];
   # };
+  users.users.tang_ = {
+    isNormalUser = true;
+    home = "/home/tang_";
+    extraGroups = [ "wheel" "networkmanager" ];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    neovim
     wget
-    firefox
-    tree
     git
     curl
-    alacritty
-    fish
-    ripgrep
   ];
 
   environment.variables.EDITER = "vim";
