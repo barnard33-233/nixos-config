@@ -85,9 +85,27 @@
     wget
     git
     curl
+    clash-meta
   ];
 
-  environment.variables.EDITER = "vim";
+  environment.variables.EDITOR = "vim";
+  
+  systemd.services.clash-meta = {
+    enable = true;
+    path = [ pkgs.clash-meta ];
+    unitConfig = {
+      Description = "clash meta.";
+      After = "network.target";
+    };
+    serviceConfig = {
+      ExecStart = "${pkgs.sudo}/bin/sudo clash-meta -d /home/tang_/.config/mihomo"; # XXX
+      # ExecStart = "which clash";
+      # Type = "exec";
+      Restart = "on-abort";
+    };
+    wantedBy = [ "multi-user.target" ];
+    
+  }; 
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
