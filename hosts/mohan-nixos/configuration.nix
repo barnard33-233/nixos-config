@@ -107,6 +107,11 @@
     
   }; 
 
+  systemd.services.nix-daemon.environment = {
+    http_proxy = "http://localhost:7890";
+    https_proxy = "http://localhost:7890";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

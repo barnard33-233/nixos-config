@@ -10,7 +10,8 @@
 
     neovim
     alacritty
-    fish
+#    fish
+    tmux
 
     ripgrep
     jq

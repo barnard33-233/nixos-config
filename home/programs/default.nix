@@ -6,5 +6,6 @@
     # ./clash.nix
     ./shell.nix
     # ./nvim.nix
+    ./zellij.nix
   ];
 }
