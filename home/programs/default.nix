@@ -7,5 +7,6 @@
     ./shell.nix
     # ./nvim.nix
     ./zellij.nix
+    ./alacritty.nix
   ];
 }
