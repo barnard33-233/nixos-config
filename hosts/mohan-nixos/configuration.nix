@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./im.nix
+      ./font.nix
     ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -30,6 +32,17 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "zh_CN.UTF-8";
+    LC_IDENTIFICATION = "zh_CN.UTF-8";
+    LC_MEASUREMENT = "zh_CN.UTF-8";
+    LC_MONETARY= "zh_CN.UTF-8";
+    LC_NAME = "zh_CN.UTF-8";
+    LC_NUMERIC = "zh_CN.UTF-8";
+    LC_PAPER = "zh_CN.UTF-8";
+    LC_TELEOHONE = "zh_CN.UTF-8";
+    LC_TIME = "zh_CN.UTF-8";
+  };
   console = {
     font = "Lat2-Terminus16";
     # keyMap = "us";
@@ -54,7 +67,6 @@
 
   # Enable sound.
   hardware.pulseaudio.enable = false;
-  # OR
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -64,14 +76,6 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.alice = {
-  #   isNormalUser = true;
-  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  #   packages = with pkgs; [
-  #     firefox
-  #     tree
-  #   ];
-  # };
   users.users.tang_ = {
     isNormalUser = true;
     home = "/home/tang_";
@@ -86,6 +90,7 @@
     git
     curl
     clash-meta
+    config.nur.repos.mic92.hello-nur
   ];
 
   environment.variables.EDITOR = "vim";
@@ -112,18 +117,6 @@
     https_proxy = "http://localhost:7890";
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
