@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     neofetch
 
+    # --tools--
     zip
     unzip
     gzip
@@ -10,7 +11,6 @@
 
     neovim
     alacritty
-#    fish
     tmux
 
     ripgrep
@@ -18,11 +18,16 @@
     file
     tree
     htop
-    
-    # clash-meta
 
     firefox
     chromium
+
+    # --desktop--
+    # spotify # TODO: handle unfree
+    vscode # TODO remove this line after configure vscode
+    # obsidian
+    # zotero
+
   ];
 
   home.sessionVariables.EDITOR = "nvim";

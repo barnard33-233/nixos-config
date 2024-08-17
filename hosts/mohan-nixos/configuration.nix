@@ -93,7 +93,8 @@
     config.nur.repos.mic92.hello-nur
   ];
 
-  environment.variables.EDITOR = "vim";
+  # environment.variables.EDITOR = "vim";
+  nixpkgs.config.allowUnfree = true;
   
   systemd.services.clash-meta = {
     enable = true;
@@ -115,6 +116,7 @@
   systemd.services.nix-daemon.environment = {
     http_proxy = "http://localhost:7890";
     https_proxy = "http://localhost:7890";
+    all_proxy = "http://localhost:7890";
   };
 
 
