@@ -3,6 +3,7 @@
   imports = [
     ./programs
     ./gnome
+    ./nvim
   ];
   home = {
     username = "tang_";
