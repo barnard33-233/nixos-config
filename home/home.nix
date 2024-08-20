@@ -1,9 +1,11 @@
-{config, pkgs, ...}:
+{config, pkgs, inputs, ...}:
 {
   imports = [
+    inputs.nur.hmModules.nur
     ./programs
     ./gnome
     ./nvim
+    ./im
   ];
   home = {
     username = "tang_";
