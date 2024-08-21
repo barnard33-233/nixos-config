@@ -37,7 +37,6 @@
     # wpsoffice
     thunderbird
     birdtray
-    ticktick
     obs-studio
 
     ## tencent
