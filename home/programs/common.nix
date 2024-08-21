@@ -9,6 +9,7 @@
     gzip
     xz
 
+    ## shell
     neovim
     alacritty
     tmux
@@ -19,15 +20,26 @@
     tree
     htop
 
+    ## storage
+    dust
+
+    # --desktop--
     firefox
     chromium
 
-    # --desktop--
-    # spotify # TODO: handle unfree
+    spotify 
     vscode # TODO remove this line after configure vscode
-    # obsidian
-    # zotero
+    obsidian
+    zotero
+    # wpsoffice
+    thunderbird
+    birdtray
+    ticktick
+    obs-studio
 
+    ## tencent
+    qq
+    # wechat-uos
   ];
 
   home.sessionVariables.EDITOR = "nvim";

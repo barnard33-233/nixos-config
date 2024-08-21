@@ -2,10 +2,12 @@
 {
   imports = [
     inputs.nur.hmModules.nur
+    inputs.nix-flatpak.homeManagerModules.nix-flatpak
     ./programs
     ./gnome
     ./nvim
     ./im
+    ./flatpak
   ];
   home = {
     username = "tang_";

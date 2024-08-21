@@ -19,6 +19,7 @@
     gnomeExtensions.gnome-40-ui-improvements
     gnomeExtensions.space-bar
     gnomeExtensions.tray-icons-reloaded
+    gnomeExtensions.kimpanel
   ];
   imports = [
     ./dconf.nix

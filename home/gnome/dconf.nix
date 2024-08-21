@@ -37,7 +37,7 @@ with lib.hm.gvariant;
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-	"/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
 	];
       search = [ "<Alt>space" ];
     };
@@ -67,27 +67,28 @@ with lib.hm.gvariant;
       disable-user-extensions = false;
       enabled-extensions = [
         "legacyschemeautoswitcher@joshimukul29.gmail.com"
-	"x11gestures@joseexposito.github.io"
-	"user-theme@gnome-shell-extensions.gcampax.github.com"
-	"alttab-mod@leleat-on-github"
-	"gnome-ui-tune@itstime.tech"
-	"gradienttopbar@pshow.org"
-	"appindicatorsupport@rgcjonas.gmail.com"
-	"custom-accent-colors@demiskp"
-	"dash-to-dock@micxgx.gmail.com"
-	"space-bar@luchrioh"
-	"trayIconsReloaded@selfmade.pl"
-	"drive-menu@gnome-shell-extensions.gcampax.github.com"
-	"system-monitor@gnome-shell-extensions.gcampax.github.com"
-	"blur-my-shell@aunetx" 
+        "x11gestures@joseexposito.github.io"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
+        "alttab-mod@leleat-on-github"
+        "gnome-ui-tune@itstime.tech"
+        "gradienttopbar@pshow.org"
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "custom-accent-colors@demiskp"
+        "dash-to-dock@micxgx.gmail.com"
+        "space-bar@luchrioh"
+        "trayIconsReloaded@selfmade.pl"
+        "drive-menu@gnome-shell-extensions.gcampax.github.com"
+        "system-monitor@gnome-shell-extensions.gcampax.github.com"
+        "blur-my-shell@aunetx" 
+        "kimpanel@kde.org"
       ];
       favorite-apps = [
         "chromium.desktop"
-	# "spotify.desktop"
-	"Alacritty.desktop"
-	# "code.desktop"
-	# "obsidian.desktop"
-	# "zotero.desktop"
+        "spotify.desktop"
+        "Alacritty.desktop"
+        "code.desktop"
+        "obsidian.desktop"
+        "zotero.desktop"
       ];
     };
   };
