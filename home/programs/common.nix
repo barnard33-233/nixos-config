@@ -19,9 +19,12 @@
     file
     tree
     htop
-
-    ## storage
     dust
+    tealdeer
+    inetutils
+    ffmpeg
+    yt-dlp
+
 
     # --desktop--
     firefox
