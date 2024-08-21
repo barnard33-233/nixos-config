@@ -8,6 +8,7 @@
     ./nvim
     ./im
     ./flatpak
+    ./dev
   ];
   home = {
     username = "tang_";
