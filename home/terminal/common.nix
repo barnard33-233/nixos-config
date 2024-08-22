@@ -10,7 +10,6 @@
     xz
 
     ## shell
-    neovim
     alacritty
     tmux
 
@@ -26,24 +25,6 @@
     yt-dlp
 
 
-    # --desktop--
-    firefox
-    chromium
-
-    spotify 
-    vscode # TODO remove this line after configure vscode
-    obsidian
-    zotero
-    # wpsoffice
-    thunderbird
-    birdtray
-    obs-studio
-
-    ## tencent
-    qq
-    # wechat-uos
   ];
-
   home.sessionVariables.EDITOR = "nvim";
-  
 }

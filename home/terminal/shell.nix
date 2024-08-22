@@ -24,6 +24,7 @@
       }           
     ];            
   };              
+
   programs.bash = {
     enable = true;
   };
