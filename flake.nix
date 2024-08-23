@@ -1,5 +1,6 @@
 {
   description = "My first Nix-flake configuration.";
+
   inputs = {
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
@@ -9,7 +10,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
+
   outputs = { self, nixpkgs, home-manager, nur, nix-flatpak, ... }@inputs: {
     nixosConfigurations = {
       mohan-nixos = nixpkgs.lib.nixosSystem {
@@ -27,6 +33,5 @@
         ];
       };
     };
-
   };
 }

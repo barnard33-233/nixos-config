@@ -4,6 +4,7 @@
     gnome.gnome-tweaks
     # gnome.gnome-themes-extra
     gnome.dconf-editor
+    bibata-cursors
 
     # extentions
     gnomeExtensions.appindicator

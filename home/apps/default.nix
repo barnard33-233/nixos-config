@@ -5,7 +5,6 @@
     chromium
 
     spotify 
-    vscode # TODO remove this line after configure vscode
     obsidian
     zotero
     # wpsoffice
@@ -18,5 +17,6 @@
   ];
   imports = [
     ./chromium.nix
+    ./vscode.nix
   ];
 }
