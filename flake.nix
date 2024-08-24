@@ -18,6 +18,7 @@
 
   outputs = { self, nixpkgs, home-manager, nur, nix-flatpak, ... }@inputs: {
     nixosConfigurations = {
+
       mohan-nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -32,6 +33,22 @@
           }
         ];
       };
+
+      laptop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          nur.nixosModules.nur
+          nix-flatpak.nixosModules.nix-flatpak
+          ./hosts/laptop/configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.tang_ = import ./home/home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
+        ];
+      };
+
     };
   };
 }

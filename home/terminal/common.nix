@@ -24,7 +24,7 @@
     ffmpeg
     yt-dlp
 
-
+    httping
   ];
   home.sessionVariables.EDITOR = "nvim";
 }
