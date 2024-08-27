@@ -69,6 +69,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  services.logind.lidSwitch = "lock";
+
   services.flatpak.enable = true;
   nixpkgs.config.allowUnfree = true;
   
