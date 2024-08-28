@@ -56,6 +56,25 @@
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
+  #gpu
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  hardware.opengl.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+      version = "555.42.02";
+      sha256_64bit = "sha256-k7cI3ZDlKp4mT46jMkLaIrc2YUx1lh1wj/J4SVSHWyk=";
+      sha256_aarch64 = lib.fakeSha256;
+      openSha256 = "sha256-rtDxQjClJ+gyrCLvdZlT56YyHQ4sbaL+d5tL4L4VfkA=";
+      settingsSha256 = "sha256-rtDxQjClJ+gyrCLvdZlT56YyHQ4sbaL+d5tL4L4VfkA=";
+      persistencedSha256 = lib.fakeSha256;
+    };
+    open = false;
+    powerManagement.enable = true;
+    nvidiaSettings = true;
+    modesetting.enable = true;
+  };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -84,6 +103,8 @@
     virtualbox
     virt-manager
     qemu
+    lshw
+    glxinfo
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
