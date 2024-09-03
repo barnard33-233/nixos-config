@@ -163,6 +163,11 @@
 
   # programs.virt-manager = true;
 
+  # steam
+  programs.steam = {
+    enable = true;
+  };
+
   system.copySystemConfiguration = false;
 
   nix.settings.substituters = [

@@ -7,13 +7,29 @@
     spotify 
     obsidian
     zotero
-    # wpsoffice
+
     thunderbird
     birdtray
     obs-studio
 
-    ## tencent
+    # im
     qq
+    telegram-desktop
+
+    # music
+    musescore
+    reaper
+
+    # games
+    lutris
+
+    # wine
+    (wineWowPackages.full.override {
+      wineRelease = "staging";
+      mingwSupport = true;
+    })
+    winetricks
+
   ];
   imports = [
     ./chromium.nix

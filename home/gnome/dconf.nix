@@ -83,7 +83,7 @@ with lib.hm.gvariant;
         "kimpanel@kde.org"
       ];
       favorite-apps = [
-        "chromium.desktop"
+        "chromium-browser.desktop"
         "spotify.desktop"
         "Alacritty.desktop"
         "code.desktop"
