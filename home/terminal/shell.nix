@@ -5,13 +5,13 @@
     enable = true;
     interactiveShellInit = builtins.readFile ./fish/config.fish + "\n";
     plugins = [
-#      {
-#        name = "af-magic-fish";
-#        src = builtins.fetchGit {
-#          url = "https://github.com/barnard33-233/af-magic-fish";
-#          rev = "6376a26f7efe4afbfa8825a8feb4d07637941dd6";
-#        };
-#      }
+      {
+        name = "af-magic-fish";
+        src = builtins.fetchGit {
+          url = "https://github.com/barnard33-233/af-magic-fish";
+          rev = "ea5bf489e60e41f827716d72b56b9e51c9ece5d8";
+        };
+      }
       { name = "bass"; src = pkgs.fishPlugins.bass.src; }
       {
         name = "z";
