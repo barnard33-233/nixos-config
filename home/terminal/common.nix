@@ -13,6 +13,8 @@
     alacritty
     tmux
 
+    xclip
+
     ripgrep
     jq
     file
@@ -25,6 +27,7 @@
     yt-dlp
 
     httping
+    gnumake
   ];
   home.sessionVariables.EDITOR = "nvim";
 }
