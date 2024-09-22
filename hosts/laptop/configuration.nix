@@ -75,8 +75,25 @@
     modesetting.enable = true;
   };
 
+  services.asusd = {
+    enable = true;
+    enableUserService = true;
+  };
+
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = [
+      pkgs.hplipWithPlugin
+    ];
+    logLevel = "debug";
+  };
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # Enable sound.
   hardware.pulseaudio.enable = false;
@@ -95,7 +112,7 @@
   nix.gc = {
     automatic = true;
     dates = "04:00";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 15d";
   };
   
   environment.systemPackages = with pkgs; [
@@ -121,6 +138,8 @@
 
   users.extraGroups.vboxusers.members = [ "tang_" ];
 
+  nix.settings.trusted-users = [ "tang_" ];
+
   systemd.services.clash-meta = {
     enable = true;
     path = [ pkgs.clash-meta ];
@@ -136,6 +155,9 @@
     wantedBy = [ "multi-user.target" ];
     
   }; 
+
+  # TODO: idk why...
+  systemd.services.NetworkManager-wait-online.enable = false;
 
   systemd.services.nix-daemon.environment = {
     http_proxy = "http://localhost:7890";
@@ -176,7 +198,7 @@
   system.copySystemConfiguration = false;
 
   nix.settings.substituters = [
-    "https://mirrors.cernet.edu.cn/nix-channels/store"
+    "https://mirrors.cernet.edu.cn/nix-channels/store?priority=20"
   ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,

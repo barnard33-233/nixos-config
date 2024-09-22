@@ -1,6 +1,12 @@
 {
   description = "My first Nix-flake configuration.";
 
+  nixConfig = {
+    substituters = [
+      "https://mirrors.cernet.edu.cn/nix-channels/store"
+    ];
+  };
+
   inputs = {
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs = {

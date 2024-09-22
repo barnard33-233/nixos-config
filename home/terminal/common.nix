@@ -1,7 +1,7 @@
 {pkgs, ...}:
 {
   home.packages = with pkgs; [
-    neofetch
+    fastfetch
 
     # --tools--
     zip
@@ -28,6 +28,8 @@
 
     httping
     gnumake
+
+    cloc
   ];
   home.sessionVariables.EDITOR = "nvim";
 }

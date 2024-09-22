@@ -12,6 +12,9 @@
     birdtray
     obs-studio
 
+    # diagrams
+    # yed
+
     # im
     qq
     telegram-desktop
