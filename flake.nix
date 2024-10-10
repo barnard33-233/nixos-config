@@ -29,9 +29,13 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
+    mohan-nixvim = {
+      url = "github:barnard33-233/nixvim/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, nix-flatpak, nixos-hardware, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nur, nix-flatpak, nixos-hardware, mohan-nixvim, ... }@inputs: {
     nixosConfigurations = {
 
       mohan-nixos = nixpkgs.lib.nixosSystem {

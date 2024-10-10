@@ -42,23 +42,23 @@ local lspconfig = {
         lspconfig.tsserver.setup({})
         lspconfig.svlangserver.setup({})
         keymapping.bindkeys(lsp_bindings)
-vim.diagnostic.config({
-  virtual_text = {
-    prefix = "-",  -- 可以用其他符号如 "■", "▎" 等
-    spacing = 4,
-    severity_limit = "Warning",  -- 只显示 Warning 和 Error
-  },
-  float = {
-    border = "rounded",  -- 浮动窗口的边框样式："single", "double", "rounded", "solid", "shadow"
-    source = "always",  -- 总是显示诊断的来源
-    header = "",        -- 不显示浮动窗口的标题
-    prefix = "",        -- 不显示前缀
-  },
-  signs = true,  -- 是否显示左侧的符号
-  underline = true,  -- 是否为诊断加下划线
-  update_in_insert = false,  -- 插入模式下是否更新诊断
-  severity_sort = true,  -- 根据严重性排序
-})
+    vim.diagnostic.config({
+      virtual_text = {
+        prefix = "-",  -- 可以用其他符号如 "■", "▎" 等
+        spacing = 4,
+        severity_limit = "Warning",  -- 只显示 Warning 和 Error
+      },
+      float = {
+        border = "rounded",  -- 浮动窗口的边框样式："single", "double", "rounded", "solid", "shadow"
+        source = "always",  -- 总是显示诊断的来源
+        header = "",        -- 不显示浮动窗口的标题
+        prefix = "",        -- 不显示前缀
+      },
+      signs = true,  -- 是否显示左侧的符号
+      underline = true,  -- 是否为诊断加下划线
+      update_in_insert = false,  -- 插入模式下是否更新诊断
+      severity_sort = true,  -- 根据严重性排序
+    })
     end
 }
 

@@ -15,6 +15,11 @@
     # diagrams
     # yed
 
+    libsForQt5.kdenlive
+    vlc
+
+    gpick
+
     # im
     qq
     telegram-desktop

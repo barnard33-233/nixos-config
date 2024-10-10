@@ -82,7 +82,7 @@
 
   # Enable CUPS to print documents.
   services.printing = {
-    enable = true;
+    enable = false;
     drivers = [
       pkgs.hplipWithPlugin
     ];
@@ -90,7 +90,7 @@
   };
 
   services.avahi = {
-    enable = true;
+    enable = false;
     nssmdns4 = true;
     openFirewall = true;
   };

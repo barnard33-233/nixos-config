@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, inputs, ...}:
 {
   home.packages = with pkgs; [
     fastfetch
@@ -30,6 +30,11 @@
     gnumake
 
     cloc
+    nix-output-monitor
+
+    ranger
+
+    inputs.mohan-nixvim.packages."x86_64-linux".default
   ];
   home.sessionVariables.EDITOR = "nvim";
 }

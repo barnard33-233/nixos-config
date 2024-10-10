@@ -6,7 +6,7 @@
     ./terminal # commandline
     ./apps # gui apps
     ./gnome
-    ./nvim
+    # ./nvim
     ./im
     ./flatpak
     ./dev
@@ -20,7 +20,6 @@
     # to fix weird behavior of moz apps with nvidia driver 555 
     MOZ_ENABLE_WAYLAND = "0";
   };
-
 
   home.stateVersion = "24.05";
  
