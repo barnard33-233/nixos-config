@@ -3,7 +3,7 @@
   programs.chromium = {
     enable = true;
     extensions = [
-      "gighmmpiobklfepjocnamgkkbiglidom" # Adblock
+      # "gighmmpiobklfepjocnamgkkbiglidom" # Adblock
       "mgpmgkhhbjgkpnanlmlhibjfgpdpgjec" # BibTeX entry from URL
       "ekmbchepcdggpcbdpjpijphjiiiimfga" # BiliScope
       "dapjbgnjinbpoindlpdmhochffioedbn" # BuiltWith
