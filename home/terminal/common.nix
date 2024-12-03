@@ -33,6 +33,8 @@
     nix-output-monitor
 
     ranger
+    pciutils
+    cmd-wrapped
 
     inputs.mohan-nixvim.packages."x86_64-linux".default
   ];

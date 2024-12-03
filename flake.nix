@@ -4,11 +4,19 @@
   nixConfig = {
     substituters = [
       "https://mirrors.cernet.edu.cn/nix-channels/store"
+      "https://cache.nixos.org"
+      "https://nix-community.cachix.org"
+    ];
+    trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
     ];
   };
 
   inputs = {
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-unstable = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+    };
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-24.05";
     };
@@ -35,13 +43,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, nix-flatpak, nixos-hardware, mohan-nixvim, ... }@inputs: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nur, nix-flatpak, nixos-hardware, mohan-nixvim, ... }@inputs: {
     nixosConfigurations = {
 
       mohan-nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          nixos-hardware.nixosModules.ausu-zephyrus-ga503
           nur.nixosModules.nur
           nix-flatpak.nixosModules.nix-flatpak
           ./hosts/mohan-nixos/configuration.nix
@@ -57,6 +64,7 @@
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          nixos-hardware.nixosModules.asus-zephyrus-ga503
           nur.nixosModules.nur
           nix-flatpak.nixosModules.nix-flatpak
           ./hosts/laptop/configuration.nix

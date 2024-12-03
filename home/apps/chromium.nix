@@ -9,7 +9,8 @@
       "dapjbgnjinbpoindlpdmhochffioedbn" # BuiltWith
       "gphhapmejobijbbhgpjhcjognlahblep" # Gnome Shell Integration
       "aapbdbdomjkkjkaonfhkkikfgjllcleb" # Google Translate
-      "laookkfknpbbblfpciffpaejjkokdgca" # Momentum
+      # "laookkfknpbbblfpciffpaejjkokdgca" # Momentum
+      "bngmbednanpcfochchhgbkookpiaiaid" # Mue
       "hfjbmagddngcpeloejdejnfgbamkjaeg" # Vimium C
       "ekhagklcjbdpajgpjgmbionohlpdbjgc" # Zotero Connector
       "dhdgffkkebhmkfjojejmpbldmpobfkfo" # Script

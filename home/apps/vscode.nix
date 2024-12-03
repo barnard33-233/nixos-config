@@ -3,7 +3,7 @@
   home.packages = [pkgs.vscode];
   programs.vscode = {
     enable = true;
-    extensions = lib.mkMerge ([
+    extensions = lib.mkMerge [
       (with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
         vscodevim.vim
         gruntfuggly.todo-tree
@@ -14,7 +14,7 @@
       (with pkgs; [
         vscode-extensions.catppuccin.catppuccin-vsc
       ])
-    ]);
+    ];
 
     userSettings = {
       "workbench.colorTheme" = "Catppuccin Latte";

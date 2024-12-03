@@ -18,8 +18,6 @@
     libsForQt5.kdenlive
     vlc
 
-    gpick
-
     # im
     qq
     telegram-desktop
@@ -37,6 +35,11 @@
       mingwSupport = true;
     })
     winetricks
+
+    # i want to try:
+    cosmic-files
+
+    gimp-with-plugins
 
   ];
   imports = [
