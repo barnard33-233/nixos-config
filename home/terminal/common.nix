@@ -36,6 +36,8 @@
     pciutils
     cmd-wrapped
 
+    tpm2-tools
+
     inputs.mohan-nixvim.packages."x86_64-linux".default
   ];
   home.sessionVariables.EDITOR = "nvim";
