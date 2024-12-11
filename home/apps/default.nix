@@ -9,7 +9,6 @@
     zotero
 
     thunderbird
-    birdtray
     obs-studio
 
     # diagrams
