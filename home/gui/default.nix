@@ -4,15 +4,14 @@
     firefox
     chromium
 
+    alacritty
+
     spotify 
     obsidian
     zotero
 
     thunderbird
     obs-studio
-
-    # diagrams
-    # yed
 
     libsForQt5.kdenlive
     vlc
@@ -40,9 +39,5 @@
 
     gimp-with-plugins
 
-  ];
-  imports = [
-    ./chromium.nix
-    ./vscode.nix
   ];
 }

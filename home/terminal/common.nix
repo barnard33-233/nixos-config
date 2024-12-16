@@ -2,43 +2,47 @@
 {
   home.packages = with pkgs; [
     fastfetch
+    cmd-wrapped
 
-    # --tools--
     zip
     unzip
     gzip
     xz
 
-    ## shell
-    alacritty
     tmux
+    ranger
+
+    gnumake
+
+    jq
+    ripgrep
+    tree
+    file
+    cloc
 
     xclip
 
-    ripgrep
-    jq
-    file
-    tree
     htop
     dust
+
     tealdeer
-    inetutils
-    ffmpeg
-    yt-dlp
 
     httping
-    gnumake
-
-    cloc
-    nix-output-monitor
-
-    ranger
+    inetutils
     pciutils
-    cmd-wrapped
 
     tpm2-tools
 
+    ffmpeg
+    yt-dlp
+
+    trash-cli
+
+
     inputs.mohan-nixvim.packages."x86_64-linux".default
+
+    nodejs_22
+    python311
   ];
   home.sessionVariables.EDITOR = "nvim";
 }

@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./font.nix
+      ../../modules/nixos
     ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -40,8 +41,7 @@
 
   console = {
     font = "Lat2-Terminus16";
-    # keyMap = "us";
-    useXkbConfig = true; # use xkb.options in tty.
+    useXkbConfig = true;
   };
 
   # Enable the X11 windowing system.
@@ -127,6 +127,7 @@
     qemu
     lshw
     glxinfo
+    nix-output-monitor
     nh
   ];
 

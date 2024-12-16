@@ -43,7 +43,16 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nur, nix-flatpak, nixos-hardware, mohan-nixvim, ... }@inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    nur,
+    nix-flatpak,
+    nixos-hardware,
+    ... 
+    }@inputs: 
+  {
     nixosConfigurations = {
 
       mohan-nixos = nixpkgs.lib.nixosSystem {
@@ -69,10 +78,12 @@
           nix-flatpak.nixosModules.nix-flatpak
           ./hosts/laptop/configuration.nix
           home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.tang_ = import ./home/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.tang_ = import ./home/home.nix;
+              extraSpecialArgs = { inherit inputs; };
+            };
           }
         ];
       };
