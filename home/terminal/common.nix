@@ -38,11 +38,14 @@
 
     trash-cli
 
+    yazi
 
     inputs.mohan-nixvim.packages."x86_64-linux".default
 
     nodejs_22
     python311
+    
+    appimage-run
   ];
   home.sessionVariables.EDITOR = "nvim";
 }

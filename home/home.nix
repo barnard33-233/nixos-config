@@ -43,7 +43,7 @@
   };
 
   xdg.enable = true;
-  home.sessionVariables = rec {
+  home.sessionVariables = {
     # to fix weird behavior of moz apps with nvidia driver 555 
     MOZ_ENABLE_WAYLAND = "0";
   };

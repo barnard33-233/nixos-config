@@ -8,6 +8,7 @@
   services.flatpak.packages = [
     "com.wps.Office"
     "com.tencent.WeChat"
+    "com.tencent.wemeet"
   ];
   # home.sessionVariables.XDG_DATA_DIRS = "$HOME/.local/share/flatpak/exports/share/:$XDG_DATA_DIRS";
 }

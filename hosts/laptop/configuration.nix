@@ -51,6 +51,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.desktopManager.runXdgAutostartIfNone = true;
+  services.xserver.displayManager.gdm.wayland = false;
   
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -105,7 +106,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  services.logind.lidSwitch = "lock";
+  services.logind.lidSwitch = "ignore";
 
   services.flatpak.enable = true;
   nixpkgs.config.allowUnfree = true;
