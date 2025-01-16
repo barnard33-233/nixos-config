@@ -20,6 +20,8 @@
     file
     cloc
 
+    pdftk
+
     xclip
 
     htop

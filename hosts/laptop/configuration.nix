@@ -51,7 +51,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.desktopManager.runXdgAutostartIfNone = true;
-  services.xserver.displayManager.gdm.wayland = false;
+  # services.xserver.displayManager.gdm.wayland = false;
   
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -130,6 +130,9 @@
     glxinfo
     nix-output-monitor
     nh
+
+    # ?
+    swtpm
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -179,6 +182,18 @@
   virtualisation = {
     libvirtd = {
       enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true;
+        ovmf = {
+          enable = true;
+          packages = [(pkgs.OVMF.override {
+            secureBoot = true;
+            tpmSupport = true;
+          }).fd];
+        };
+      };
     };
 
     virtualbox = {

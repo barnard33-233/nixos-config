@@ -5,6 +5,10 @@ in
 {
   options.customHome.git = {
     enable = lib.mkEnableOption "Git Config.";
+    proxy = {
+      enable = lib.mkEnableOption "Enable git proxy";
+      
+    };
   };
 
   config = lib.mkIf cfg.enable {

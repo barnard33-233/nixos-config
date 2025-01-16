@@ -20,6 +20,8 @@
     qq
     telegram-desktop
 
+    # wpsoffice
+
     # music
     musescore
     reaper

@@ -29,7 +29,7 @@ in
         removable-drive-menu
         legacy-gtk3-theme-scheme-auto-switcher
         system-monitor
-        x11-gestures
+        # x11-gestures
         alttab-mod
         blur-my-shell
         dash-to-dock
@@ -104,7 +104,7 @@ in
         disable-user-extensions = false;
         enabled-extensions = lib.mkIf cfg.enableExtensions [
           "legacyschemeautoswitcher@joshimukul29.gmail.com"
-          "x11gestures@joseexposito.github.io"
+          # "x11gestures@joseexposito.github.io"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
           "alttab-mod@leleat-on-github"
           "gnome-ui-tune@itstime.tech"
