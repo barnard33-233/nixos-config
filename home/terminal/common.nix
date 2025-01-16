@@ -29,7 +29,7 @@
 
     tealdeer
 
-    httping
+    # httping
     inetutils
     pciutils
 

@@ -1,4 +1,4 @@
-live_config_reload = true
+general.live_config_reload = true
 
 [colors.bright]
 black = "0x000000"
@@ -31,7 +31,7 @@ size = 18
 history = 2000
 multiplier = 10
 
-[shell]
+[terminal.shell]
 program = "zellij"
 
 [window]
@@ -46,3 +46,5 @@ lines = 40
 [window.padding]
 x = 10
 y = 15
+
+[terminal]

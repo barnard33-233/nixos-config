@@ -14,10 +14,10 @@
   };
 
   inputs = {
-    nixpkgs-unstable = {
+    nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
-    nixpkgs = {
+    nixpkgs-2405 = {
       url = "github:NixOS/nixpkgs/nixos-24.05";
     };
     nur= {

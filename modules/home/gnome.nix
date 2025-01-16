@@ -15,9 +15,9 @@ in
 
     home.packages = lib.mkMerge [
       (with pkgs;[
-        gnome.gnome-tweaks
+        gnome-tweaks
         # gnome.gnome-themes-extra
-        gnome.dconf-editor
+        dconf-editor
         bibata-cursors
       ])
 
