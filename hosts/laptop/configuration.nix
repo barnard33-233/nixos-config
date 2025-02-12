@@ -101,6 +101,7 @@
   services.pipewire = {
     enable = true;
     pulse.enable = true;
+    jack.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -139,7 +140,7 @@
   users.users.tang_ = {
     isNormalUser = true;
     home = "/home/tang_";
-    extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" ];
+    extraGroups = [ "wheel" "networkmanager" "libvirtd" "docker" "realtime"];
   };
 
   users.extraGroups.vboxusers.members = [ "tang_" ];

@@ -24,7 +24,7 @@
       url = "github:nix-community/NUR";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak = {

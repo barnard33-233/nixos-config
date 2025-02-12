@@ -9,6 +9,7 @@
     gzip
     xz
 
+    mosh
     tmux
     ranger
 
@@ -29,8 +30,9 @@
 
     tealdeer
 
-    # httping
     inetutils
+    dnsutils
+    mailutils
     pciutils
 
     tpm2-tools
