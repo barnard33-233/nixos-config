@@ -55,6 +55,14 @@
   {
     nixosConfigurations = {
 
+
+      vps = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./machine/vps/configuration.nix
+        ];
+      };
+
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
