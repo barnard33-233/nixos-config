@@ -14,6 +14,8 @@
     ranger
 
     gnumake
+    gdb
+    gef
 
     jq
     ripgrep
