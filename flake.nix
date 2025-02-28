@@ -55,33 +55,18 @@
   {
     nixosConfigurations = {
 
-      mohan-nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          nur.nixosModules.nur
-          nix-flatpak.nixosModules.nix-flatpak
-          ./hosts/mohan-nixos/configuration.nix
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.tang_ = import ./home/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
-        ];
-      };
-
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           nixos-hardware.nixosModules.asus-zephyrus-ga503
           nur.nixosModules.nur
           nix-flatpak.nixosModules.nix-flatpak
-          ./hosts/laptop/configuration.nix
+          ./machine/laptop/host/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.tang_ = import ./home/home.nix;
+              users.tang_ = import ./machine/laptop/home/home.nix;
               extraSpecialArgs = { inherit inputs; };
             };
           }

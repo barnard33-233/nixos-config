@@ -6,7 +6,7 @@
     ./terminal # commandline
     ./gui
     ./flatpak.nix
-    ../modules/home
+    ../../../modules/home
   ];
   home = {
     username = "tang_";
