@@ -83,7 +83,7 @@
 
   # Enable CUPS to print documents.
   services.printing = {
-    enable = false;
+    enable = true;
     drivers = [
       pkgs.hplipWithPlugin
     ];
