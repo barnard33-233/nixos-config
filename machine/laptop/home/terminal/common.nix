@@ -24,6 +24,7 @@
     cloc
 
     pdftk
+    librsvg
 
     xclip
 
@@ -52,6 +53,7 @@
     python311
     
     appimage-run
+    stress-ng
   ];
   home.sessionVariables.EDITOR = "nvim";
 }

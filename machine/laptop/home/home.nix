@@ -17,7 +17,10 @@
 
   # my own modules
   customHome = {
-    alacritty.enable = true;
+    alacritty = {
+      enable = true;
+      defaultTerminal = true;
+    };
     chromium = {
       enable = true;
       enableExtensions = true;
@@ -38,7 +41,7 @@
         "zotero.desktop"
       ];
     };
-    vscode.enable = true;
+    vscode.enable = false;
     zellij.enable = true;
   };
 

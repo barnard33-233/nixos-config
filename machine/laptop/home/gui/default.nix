@@ -7,6 +7,7 @@
     alacritty
 
     spotify 
+    netease-cloud-music-gtk
     obsidian
     zotero
 
@@ -15,6 +16,9 @@
 
     libsForQt5.kdenlive
     vlc
+
+    wireshark-qt
+    dosbox
 
     # im
     qq
@@ -25,6 +29,8 @@
     # music
     musescore
     reaper
+    metronome
+    lingot
 
     # games
     lutris
@@ -45,5 +51,7 @@
 
     guitarix
     qpwgraph
+
+    vscode
   ];
 }

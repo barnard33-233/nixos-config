@@ -41,6 +41,10 @@
       url = "github:barnard33-233/nixvim/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    paste-bin = {
+      url = "github:w4/bin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -50,26 +54,29 @@
     nur,
     nix-flatpak,
     nixos-hardware,
+    paste-bin,
     ... 
     }@inputs: 
   {
     nixosConfigurations = {
 
 
+      # a vm conf for my currently not existing vps
       vps = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./machine/vps/configuration.nix
+          ./machine/vps/host/configuration.nix
         ];
+        specialArgs = {inherit inputs; };
       };
 
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ./machine/laptop/host/configuration.nix
           nixos-hardware.nixosModules.asus-zephyrus-ga503
           nur.nixosModules.nur
           nix-flatpak.nixosModules.nix-flatpak
-          ./machine/laptop/host/configuration.nix
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;

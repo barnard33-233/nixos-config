@@ -1,4 +1,4 @@
-{
+{config, pkgs, lib, inputs, ...}: {
   imports = [
     ./alacritty.nix
     ./chromium.nix
