@@ -59,7 +59,7 @@
 
   #gpu
   boot.initrd.kernelModules = [ "amdgpu" ];
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.latest;
@@ -90,7 +90,7 @@
   };
 
   # Enable sound.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
