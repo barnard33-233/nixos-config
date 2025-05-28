@@ -1,8 +1,9 @@
 {config, pkgs, lib, inputs, ...}:
 let
   cfg = config.customHome.fcitx5;
+  linyinfeng = import inputs.linyinfeng-717ab9baaaca4fe6ae7dfd037a480de9dfce51fb {inherit pkgs;};
   fcitx5-rime-override = pkgs.fcitx5-rime.override {
-    rimeDataPkgs = with config.nur.repos.linyinfeng.rimePackages;
+    rimeDataPkgs = with linyinfeng.rimePackages;
       withRimeDeps [
         rime-ice
       ];

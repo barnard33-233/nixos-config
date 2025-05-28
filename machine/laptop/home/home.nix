@@ -1,7 +1,6 @@
 {config, pkgs, inputs, ...}:
 {
   imports = [
-    inputs.nur.hmModules.nur
     inputs.nix-flatpak.homeManagerModules.nix-flatpak
     ./terminal # commandline
     ./gui

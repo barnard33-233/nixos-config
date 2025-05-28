@@ -47,8 +47,6 @@
 
     gimp-with-plugins
 
-    # config.nur.repos.novel2430.wemeet-bin-bwrap
-
     guitarix
     qpwgraph
 

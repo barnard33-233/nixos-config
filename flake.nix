@@ -20,8 +20,9 @@
     nixpkgs-2405 = {
       url = "github:NixOS/nixpkgs/nixos-24.05";
     };
-    nur= {
-      url = "github:nix-community/NUR";
+    linyinfeng-717ab9baaaca4fe6ae7dfd037a480de9dfce51fb = {
+      url = "github:linyinfeng/nur-packages/717ab9baaaca4fe6ae7dfd037a480de9dfce51fb";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -51,7 +52,6 @@
     self,
     nixpkgs,
     home-manager,
-    nur,
     nix-flatpak,
     nixos-hardware,
     paste-bin,
@@ -75,7 +75,6 @@
         modules = [
           ./machine/laptop/host/configuration.nix
           nixos-hardware.nixosModules.asus-zephyrus-ga503
-          nur.nixosModules.nur
           nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.home-manager {
             home-manager = {
