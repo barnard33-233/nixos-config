@@ -20,6 +20,9 @@
     nixpkgs-2405 = {
       url = "github:NixOS/nixpkgs/nixos-24.05";
     };
+    nixpkgs-musescore444 = {
+      url = "github:NixOS/nixpkgs/ecb95bc697b31a4f2cc1852a7c5ec2fa2c04fc58";
+    };
     linyinfeng-717ab9baaaca4fe6ae7dfd037a480de9dfce51fb = {
       url = "github:linyinfeng/nur-packages/717ab9baaaca4fe6ae7dfd037a480de9dfce51fb";
       inputs.nixpkgs.follows = "nixpkgs";

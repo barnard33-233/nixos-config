@@ -1,4 +1,9 @@
-{config, pkgs, lib, ...}:
+{config, pkgs, lib, inputs,...}:
+let
+  pkgs-musescore = import inputs.nixpkgs-musescore444 {
+    system = "x86_64-linux";
+  };
+in
 {
   home.packages = with pkgs; [
     firefox
@@ -27,7 +32,7 @@
     # wpsoffice
 
     # music
-    musescore
+    pkgs-musescore.musescore
     reaper
     metronome
     lingot
