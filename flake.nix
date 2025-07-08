@@ -27,6 +27,10 @@
       url = "github:linyinfeng/nur-packages/717ab9baaaca4fe6ae7dfd037a480de9dfce51fb";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    xddxdd = {
+      url = "github:xddxdd/nur-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";

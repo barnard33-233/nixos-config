@@ -21,6 +21,8 @@ in
         addons = [
           fcitx5-rime-override
           pkgs.fcitx5-chinese-addons
+          pkgs.fcitx5-gtk
+          pkgs.libsForQt5.fcitx5-qt
         ];
       };
     };

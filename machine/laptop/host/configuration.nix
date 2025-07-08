@@ -209,6 +209,10 @@
 
   programs.wireshark.enable = true;
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-11.5.0"
+  ];
+
   system.copySystemConfiguration = false;
 
   nix.settings.substituters = [

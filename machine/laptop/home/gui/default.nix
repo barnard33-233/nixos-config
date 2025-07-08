@@ -3,6 +3,9 @@ let
   pkgs-musescore = import inputs.nixpkgs-musescore444 {
     system = "x86_64-linux";
   };
+  xddxdd = import inputs.xddxdd {
+    inherit pkgs;
+  };
 in
 {
   home.packages = with pkgs; [
@@ -29,7 +32,7 @@ in
     qq
     telegram-desktop
 
-    # wpsoffice
+    xddxdd.baidunetdisk
 
     # music
     pkgs-musescore.musescore
