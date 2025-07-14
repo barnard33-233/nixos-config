@@ -35,6 +35,7 @@
 
   services.openssh = {
     enable = true;
+    # remove this line before deploy
     settings.PasswordAuthentication = true;
   };
 
