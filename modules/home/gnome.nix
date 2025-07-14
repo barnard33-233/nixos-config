@@ -11,7 +11,7 @@ in
       default = [];
     };
   };
-  config = {
+  config = lib.mkIf cfg.enable {
 
     home.packages = lib.mkMerge [
       (with pkgs;[

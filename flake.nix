@@ -23,6 +23,10 @@
     nixpkgs-musescore444 = {
       url = "github:NixOS/nixpkgs/ecb95bc697b31a4f2cc1852a7c5ec2fa2c04fc58";
     };
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     linyinfeng-717ab9baaaca4fe6ae7dfd037a480de9dfce51fb = {
       url = "github:linyinfeng/nur-packages/717ab9baaaca4fe6ae7dfd037a480de9dfce51fb";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -65,8 +69,20 @@
     ... 
     }@inputs: 
   {
-    nixosConfigurations = {
+    darwinConfigurations = {
+      Mo-macmini = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./machine/mo-macmini/host/configuration.nix
+          home-manager.darwinModules.home-manager {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.mohan = import ./machine/mo-macmini/home/home.nix;
+          }
+        ];
+      };
+    };
 
+    nixosConfigurations = {
 
       # a vm conf for my currently not existing vps
       vps = nixpkgs.lib.nixosSystem {
