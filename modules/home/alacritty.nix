@@ -9,6 +9,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    home.packages = [ pkgs.alacritty ];
     xdg.configFile."alacritty" = {
       enable = true;
       recursive = true;

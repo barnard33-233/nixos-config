@@ -2,24 +2,23 @@
 {
   imports = [
     ../../../modules/home
+    ./terminal
+    ./gui
   ];
   home = {
     username = "mohan";
-    homeDirectory = "/User/mohan";
+    homeDirectory = "/Users/mohan";
   };
-  home.stateVersion = "24.05"
+  home.stateVersion = "24.05";
   programs.home-manager.enable = true;
 
   # my own modules
   customHome = {
     alacritty = {
       enable = true;
-      defaultTerminal = true;
+      defaultTerminal = false;
     };
-    chromium = {
-      enable = true;
-      enableExtensions = true;
-    };
+    chromium.enable = false;
     direnv.enable = true;
     fcitx5.enable = false;
     fish.enable = true;

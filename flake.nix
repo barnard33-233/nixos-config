@@ -62,6 +62,7 @@
   outputs = {
     self,
     nixpkgs,
+    nix-darwin,
     home-manager,
     nix-flatpak,
     nixos-hardware,
@@ -74,9 +75,12 @@
         modules = [
           ./machine/mo-macmini/host/configuration.nix
           home-manager.darwinModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.mohan = import ./machine/mo-macmini/home/home.nix;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.mohan = import ./machine/mo-macmini/home/home.nix;
+              extraSpecialArgs = { inherit inputs; };
+            }; 
           }
         ];
       };
