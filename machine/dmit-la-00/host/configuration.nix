@@ -7,8 +7,17 @@
     ./cloud-init.nix
   ];
 
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 7d";
+    };
+  };
+
   boot.loader.grub = {
     efiSupport = false;
+    configurationLimit = 3;
     # efiInstallAsRemovable = true;
   };
   

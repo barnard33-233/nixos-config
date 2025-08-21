@@ -99,11 +99,11 @@
     nixosConfigurations = {
 
       # dmit config
-      vps = nixpkgs.lib.nixosSystem {
+      dmit-la-00 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           disko.nixosModules.disko
-          ./machine/vps/host/configuration.nix
+          ./machine/dmit-la-00/host/configuration.nix
         ];
         specialArgs = {inherit inputs; };
       };
