@@ -12,8 +12,6 @@ in
     firefox
     chromium
 
-    alacritty
-
     spotify 
     netease-cloud-music-gtk
     obsidian
@@ -27,10 +25,12 @@ in
 
     wireshark-qt
     dosbox
+    localsend
 
     # im
     qq
     telegram-desktop
+    feishu
 
     xddxdd.baidunetdisk
 

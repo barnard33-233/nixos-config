@@ -37,6 +37,7 @@
     dnsutils
     mailutils
     pciutils
+    iperf3
 
     tpm2-tools
 
