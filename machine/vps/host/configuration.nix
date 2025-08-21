@@ -1,22 +1,35 @@
-{ config, lib, pkgs, inputs, ... }: {
+{ config, lib, pkgs, modulesPath, inputs, ... } @args: {
   imports = [
-    inputs.paste-bin.nixosModules.x86_64-linux.default
-    {
-      services.paste-bin = {
-        enable = true;
-        bindAddress = "[::]:8080";
-      };
-    }
+    (modulesPath + "/installer/scan/not-detected.nix")
+    (modulesPath + "/profiles/qemu-guest.nix")
+    ./disk.nix
+    ./hardware-configuration.nix
+    ./cloud-init.nix
   ];
-  boot.kernelPackages = pkgs.linuxPackages_5_15;
+
+  boot.loader.grub = {
+    efiSupport = false;
+    # efiInstallAsRemovable = true;
+  };
   
-  users.groups.admin = {};
+  services.openssh = {
+    enable = true;
+  };
+
+  users.groups.mo = {};
   users.users = {
-    admin = {
+    root = {
+      openssh.authorizedKeys.keys = [
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2SL21V7FPVzxm/bgT8Jfz9iaMRE1D3YA4bm4Ukml6kj89hhWUHLnyr94zRZd//ZQ50MoO8VK5tF5UmBadyLACRqt+LK7l6yWmXokLC0B+NTJ2MEaHOl03BduUJK7cClsnpDNK55uXqggvZfitIxLUkn9FCVa3FH1qrY9TOokB3HQcxV/4S0FXRnn8Bu2s9koFjbEJvT6dnwXHjgDEShNqpMNMcf6DL9ck6I1WWS0/ZnDeVYgmzLEPbN7bZlPc/xGUTwZZ8l3WVrPQmR5FD4bR4vqLAMhNu8B27u5Kmr5Dkbw6X5RrPAlS3SBrmohtZ2z42sN4XKOfUYvrU/UfYS8r"
+      ];
+    };
+    mo = {
       isNormalUser = true;
       extraGroups = [ "wheel" ];
-      password = "admin";
-      group = "admin";
+      group = "mo";
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDqszaMPp24YWX6k3FnFPApbSV7q5+S/lwK/DtGgO4yA htang0203@gmail.com"
+      ];
     };
   };
 
@@ -24,68 +37,25 @@
     # following configuration is added only when building VM with build-vm
     virtualisation = {
       memorySize = 2048; # Use 2048MiB memory.
-      cores = 3;
+      cores = 2;
       graphics = false;
       forwardPorts = [
         { from = "host"; host.port = 2222; guest.port = 22; proto = "tcp"; }  # SSH
         { from = "host"; host.port = 8080; guest.port = 8080; proto = "tcp"; }  # Web server
-    ];
+      ];
     };
   };
 
-  services.openssh = {
-    enable = true;
-    # remove this line before deploy
-    settings.PasswordAuthentication = true;
-  };
+  networking.firewall.allowedTCPPorts = [ 22 8080 ];
 
-#  services.sing-box = 
-#  let
-#    TLSConf = {
-#      enable = true;
-#      server_name = "test";
-#      key_path = "/"; # TODO
-#      certificate_path = "/"; #TODO
-#    };
-#  in
-#  {
-#    enable = true;
-#    settings = {
-#      log = { level = "warn";};
-#      inbounds = [
-#        {
-#          type = "hysteria2";
-#          tag = "hys-1";
-#          listen = "::";
-#          listen_port = "8888";
-#          tcp_multi_path = true;
-#          tcp_fast_open = true;
-#          users = [
-#            {
-#              name = "test";
-#              password = "test@pass";
-#            }
-#          ];
-#          # TODO: obfs
-#          tls = TLSConf;
-#          brutal_debug = false;
-#        }
-#      ];
-#      outbounds = [
-#        {
-#          type = "direct";
-#        }
-#      ];
-#      route = {};
-#      experimental = {};
-#    };
-#  };
-# 
-
-  networking.firewall.allowedTCPPorts = [ 22 8080];
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = map lib.lowPrio (with pkgs; [
+    vim
+    curl
+    gitMinimal
     htop
-  ];
+    fastfetch
+    iperf3
+  ]);
 
   system.stateVersion = "23.05";
 }

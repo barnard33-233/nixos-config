@@ -53,6 +53,13 @@
       url = "github:barnard33-233/nixvim/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-facter-modules = {
+      url = "github:numtide/nixos-facter-modules";
+    };
     paste-bin = {
       url = "github:w4/bin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -67,10 +74,13 @@
     nix-flatpak,
     nixos-hardware,
     paste-bin,
-    ... 
-    }@inputs: 
+    disko,
+    nixos-facter-modules,
+    ...
+    }@inputs:
   {
     darwinConfigurations = {
+      # Mac mini m4 configuration
       Mo-macmini = nix-darwin.lib.darwinSystem {
         modules = [
           ./machine/mo-macmini/host/configuration.nix
@@ -88,15 +98,17 @@
 
     nixosConfigurations = {
 
-      # a vm conf for my currently not existing vps
+      # dmit config
       vps = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          disko.nixosModules.disko
           ./machine/vps/host/configuration.nix
         ];
         specialArgs = {inherit inputs; };
       };
 
+      # asus-zephyrus-ga503 config
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
