@@ -5,6 +5,7 @@
     ./disk.nix
     ./hardware-configuration.nix
     ./cloud-init.nix
+    ./paste-bin.nix
   ];
 
   nix = {
