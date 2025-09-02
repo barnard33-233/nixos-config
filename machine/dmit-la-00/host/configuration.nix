@@ -1,9 +1,13 @@
 { config, lib, pkgs, modulesPath, inputs, ... } @args: {
+  _module.args = {
+    sld = "mossite.homes";
+  };
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     ./disk.nix
     ./hardware-configuration.nix
+    ./caddy.nix
     ./cloud-init.nix
     ./paste-bin.nix
   ];
@@ -22,8 +26,18 @@
     # efiInstallAsRemovable = true;
   };
   
-  services.openssh = {
-    enable = true;
+  # basic services
+  services = {
+    openssh = {
+      enable = true;
+      permitRootLogin = "prohibit-password";
+    };
+
+    journald = {
+      extraConfig = ''
+        RuntimeMaxUse=10M
+      '';
+    };
   };
 
   users.groups.mo = {};
@@ -43,20 +57,7 @@
     };
   };
 
-  virtualisation.vmVariant = {
-    # following configuration is added only when building VM with build-vm
-    virtualisation = {
-      memorySize = 2048; # Use 2048MiB memory.
-      cores = 2;
-      graphics = false;
-      forwardPorts = [
-        { from = "host"; host.port = 2222; guest.port = 22; proto = "tcp"; }  # SSH
-        { from = "host"; host.port = 8080; guest.port = 8080; proto = "tcp"; }  # Web server
-      ];
-    };
-  };
-
-  networking.firewall.allowedTCPPorts = [ 22 8080 ];
+  networking.firewall.allowedTCPPorts = [ 22 8080 80 443 ];
 
   environment.systemPackages = map lib.lowPrio (with pkgs; [
     vim
