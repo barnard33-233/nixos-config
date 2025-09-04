@@ -57,7 +57,7 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 8080 80 443 ];
+  networking.firewall.allowedTCPPorts = [ 22 80 443 ];
 
   environment.systemPackages = map lib.lowPrio (with pkgs; [
     vim
