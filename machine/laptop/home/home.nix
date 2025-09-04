@@ -10,8 +10,13 @@
   home = {
     username = "tang_";
     homeDirectory = "/home/tang_";    
+    stateVersion = "24.05";
+    sessionVariables = {
+      # to fix weird behavior of moz apps with nvidia driver 555 
+      MOZ_ENABLE_WAYLAND = "0";
+    };
   };
-  home.stateVersion = "24.05";
+
   programs.home-manager.enable = true;
 
   # my own modules
@@ -40,13 +45,9 @@
         "zotero.desktop"
       ];
     };
-    vscode.enable = false;
+    vscode.enable = true;
     zellij.enable = true;
   };
 
   xdg.enable = true;
-  home.sessionVariables = {
-    # to fix weird behavior of moz apps with nvidia driver 555 
-    MOZ_ENABLE_WAYLAND = "0";
-  };
 }

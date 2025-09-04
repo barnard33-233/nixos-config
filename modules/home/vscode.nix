@@ -12,14 +12,14 @@ in
       enable = true;
       extensions = lib.mkMerge [
         (with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
-          vscodevim.vim
           gruntfuggly.todo-tree
         ]) 
-        (with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace-release; [
-          ms-vscode-remote.remote-ssh
-        ])
-        (with pkgs; [
-          vscode-extensions.catppuccin.catppuccin-vsc
+        # (with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace-release; [
+        #   ms-vscode-remote.remote-ssh
+        # ])
+        (with pkgs.vscode-extensions; [
+          catppuccin.catppuccin-vsc
+          tecosaur.latex-utilities
         ])
       ];
   
