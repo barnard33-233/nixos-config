@@ -47,6 +47,10 @@
     };
     vscode.enable = true;
     zellij.enable = true;
+    neovide = {
+      enable = true;
+      bin = inputs.mohan-nixvim.packages."x86_64-linux".default;
+    };
   };
 
   xdg.enable = true;

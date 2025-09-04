@@ -7,6 +7,7 @@
     ./fcitx5.nix
     ./git.nix
     ./gnome.nix
+    ./neovide.nix
     ./vscode.nix
     ./zellij.nix
   ];
