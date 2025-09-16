@@ -57,7 +57,5 @@ in
 
     guitarix
     qpwgraph
-
-    vscode
   ];
 }
