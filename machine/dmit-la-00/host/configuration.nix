@@ -25,12 +25,19 @@
     configurationLimit = 3;
     # efiInstallAsRemovable = true;
   };
+
+  programs = {
+    mosh = {
+      enable = true;
+      openFirewall = true;
+    };
+  };
   
   # basic services
   services = {
     openssh = {
       enable = true;
-      permitRootLogin = "prohibit-password";
+      ports = [ 10022 ];
     };
 
     journald = {
@@ -57,7 +64,10 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 22 80 443 ];
+  networking = {
+    firewall.allowedTCPPorts = [ 22 80 443 10022 ];
+    useDHCP = false;
+  };
 
   environment.systemPackages = map lib.lowPrio (with pkgs; [
     vim
@@ -67,6 +77,13 @@
     fastfetch
     iperf3
   ]);
+  
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 4096;
+    }
+  ];
 
   system.stateVersion = "23.05";
 }
