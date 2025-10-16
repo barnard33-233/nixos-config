@@ -19,6 +19,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = [ "ntfs" ];
 
+  boot.crashDump = {
+    enable = true;
+  };
+
   networking.hostName = "mochine"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
@@ -127,6 +131,8 @@
 
     # ?
     swtpm
+
+    kexec-tools
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

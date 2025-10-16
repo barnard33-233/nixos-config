@@ -38,6 +38,7 @@
     mailutils
     pciutils
     iperf3
+    mtr
 
     tpm2-tools
 
@@ -55,6 +56,9 @@
     
     appimage-run
     stress-ng
+
+    pdfpc
+    kdePackages.okular
   ];
   home.sessionVariables.EDITOR = "nvim";
 }
