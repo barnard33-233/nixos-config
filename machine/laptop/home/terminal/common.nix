@@ -55,7 +55,7 @@
     python311
     
     appimage-run
-    stress-ng
+    steam-run
 
     pdfpc
     kdePackages.okular
