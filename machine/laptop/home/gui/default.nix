@@ -20,7 +20,7 @@ in
     thunderbird
     obs-studio
 
-    libsForQt5.kdenlive
+    kdePackages.kdenlive
     vlc
 
     wireshark-qt

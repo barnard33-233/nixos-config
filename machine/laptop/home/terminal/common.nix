@@ -47,8 +47,6 @@
 
     trash-cli
 
-    yazi
-
     inputs.mohan-nixvim.packages."x86_64-linux".default
 
     nodejs_22
