@@ -10,23 +10,25 @@ in
   config = lib.mkIf cfg.enable {
     programs.vscode = {
       enable = true;
-      extensions = lib.mkMerge [
-        (with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
-          gruntfuggly.todo-tree
-        ]) 
-        # (with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace-release; [
-        #   ms-vscode-remote.remote-ssh
-        # ])
-        (with pkgs.vscode-extensions; [
-          catppuccin.catppuccin-vsc
-          tecosaur.latex-utilities
-        ])
-      ];
-  
-      userSettings = {
-        "workbench.colorTheme" = "Catppuccin Latte";
-        "files.autoSave" = "afterDelay";
-        "git.autoFetch" = false;
+      profiles.default = {
+        extensions = lib.mkMerge [
+          (with inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace; [
+            gruntfuggly.todo-tree
+          ])
+          # (with inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system}.vscode-marketplace-release; [
+          #   ms-vscode-remote.remote-ssh
+          # ])
+          (with pkgs.vscode-extensions; [
+            catppuccin.catppuccin-vsc
+            tecosaur.latex-utilities
+          ])
+        ];
+
+        userSettings = {
+          "workbench.colorTheme" = "Catppuccin Latte";
+          "files.autoSave" = "afterDelay";
+          "git.autoFetch" = false;
+        };
       };
     };
   };

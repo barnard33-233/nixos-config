@@ -17,16 +17,20 @@ in
     ];
     programs.git = {
       enable = true;
-      userName = "barnard33-233";
-      userEmail = "htang0203@gmail.com";
-      delta = {
-        enable = true;
-        options = {
-          navigate = true;
-      light = true;
-      side-by-side = true;
-        };
+      settings.user = {
+        name = "barnard33-233";
+        email = "htang0203@gmail.com";
       };
     };
+
+    programs.delta = {
+        enable = true;
+        enableGitIntegration = true;
+        options = {
+          navigate = true;
+          light = true;
+          side-by-side = true;
+        };
+      };
   };
 }
