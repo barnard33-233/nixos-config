@@ -55,7 +55,18 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.desktopManager.runXdgAutostartIfNone = true;
-  # services.xserver.displayManager.gdm.wayland = false;
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-music
+    gnome-terminal
+    gnome-software
+    gedit
+    epiphany
+    geary
+    tali
+    iagno
+    hitori
+    atomix
+  ];
   
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
