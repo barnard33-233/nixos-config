@@ -51,7 +51,9 @@ in
     winetricks
 
     # i want to try:
-    cosmic-files
+    code-cursor
+    codex
+    claude-code
 
     gimp-with-plugins
 
