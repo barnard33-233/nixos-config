@@ -24,7 +24,5 @@ in
     # music
     reaper
     musescore
-
-    gimp
   ];
 }

@@ -22,7 +22,7 @@
     source-sans
     source-serif
     noto-fonts
-    ubuntu_font_family
+    ubuntu-classic
     # Chinese
     source-han-sans
     source-han-serif
@@ -31,7 +31,7 @@
     wqy_microhei
     wqy_zenhei
     # emoji
-    noto-fonts-emoji
+    noto-fonts-color-emoji
 
     #nerdfonts
     #(nerdfonts.override {fonts = ["JetBrainsMono" "FiraCode"];})
