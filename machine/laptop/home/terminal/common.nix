@@ -8,6 +8,7 @@
     unzip
     gzip
     xz
+    unrar
 
     mosh
     tmux

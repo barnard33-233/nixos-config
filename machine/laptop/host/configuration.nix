@@ -177,9 +177,9 @@
   systemd.services.NetworkManager-wait-online.enable = false;
 
   systemd.services.nix-daemon.environment = {
-    http_proxy = "http://localhost:7890";
-    https_proxy = "http://localhost:7890";
-    all_proxy = "http://localhost:7890";
+    http_proxy = "http://127.0.0.1:7890";
+    https_proxy = "http://127.0.0.1:7890";
+    all_proxy = "http://127.0.0.1:7890";
   };
 
 

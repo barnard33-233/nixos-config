@@ -51,9 +51,9 @@ in
     winetricks
 
     # i want to try:
-    code-cursor
-    codex
-    claude-code
+    # code-cursor
+    # codex
+    # claude-code
 
     gimp-with-plugins
 
