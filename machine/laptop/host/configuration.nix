@@ -86,7 +86,6 @@
 
   services.asusd = {
     enable = true;
-    enableUserService = true;
   };
 
   # Enable CUPS to print documents.
