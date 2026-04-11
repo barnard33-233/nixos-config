@@ -23,7 +23,7 @@ in
     kdePackages.kdenlive
     vlc
 
-    wireshark-qt
+    wireshark
     dosbox
     localsend
 
@@ -44,11 +44,11 @@ in
     lutris
 
     # wine
-    (wineWowPackages.full.override {
-      wineRelease = "staging";
-      mingwSupport = true;
-    })
-    winetricks
+    # (wineWowPackages.full.override {
+    #   wineRelease = "staging";
+    #   mingwSupport = true;
+    # })
+    # winetricks
 
     # i want to try:
     # code-cursor
