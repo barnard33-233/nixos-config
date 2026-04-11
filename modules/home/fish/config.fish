@@ -8,10 +8,14 @@ end
 
 # >>> clash >>>
 function setproxy
-    set -xg all_proxy http://127.0.0.1:7890
-    set -xg http_proxy http://127.0.0.1:7890
-    set -xg https_proxy http://127.0.0.1:7890
-    set -xg no_proxy http://127.0.0.1:7890
+    if test -n "$PROXY"
+        set -xg all_proxy $PROXY
+        set -xg http_proxy $PROXY
+        set -xg https_proxy $PROXY
+        set -xg no_proxy "localhost,127.0.0.1,::1"
+    else
+        echo "[WRN] Variable PROXY is empty"
+    end
 end
 
 function noproxy
@@ -20,7 +24,5 @@ function noproxy
     set -xg https_proxy
     set -xg no_proxy
 end
-
-setproxy
 
 # <<< clash <<<

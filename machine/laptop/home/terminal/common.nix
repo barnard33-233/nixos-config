@@ -58,6 +58,10 @@
 
     pdfpc
     kdePackages.okular
+
+    # AI-Agent
+    claude-code
+    opencode
   ];
   home.sessionVariables.EDITOR = "nvim";
 }

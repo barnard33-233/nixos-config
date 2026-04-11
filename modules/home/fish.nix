@@ -5,12 +5,26 @@ in
 {
   options.customHome.fish = {
     enable = lib.mkEnableOption "Fish Config.";
+    prependInteractiveShellInit = lib.mkOption {
+      type = lib.types.lines;
+      default = "";
+      description = "Fish shell initialization code to prepend before default config";
+    };
+    appendInteractiveShellInit = lib.mkOption {
+      type = lib.types.lines;
+      default = "";
+      description = "Fish shell initialization code to append after default config";
+    };
   };
 
   config = lib.mkIf cfg.enable {
     programs.fish = {
       enable = true;
-      interactiveShellInit = builtins.readFile ./fish/config.fish + "\n";
+      interactiveShellInit = ''
+        ${cfg.prependInteractiveShellInit}
+        ${builtins.readFile ./fish/config.fish}
+        ${cfg.appendInteractiveShellInit}
+      '';
       plugins = [
         {
           name = "af-magic-fish";
