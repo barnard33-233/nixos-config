@@ -31,7 +31,15 @@
     };
     direnv.enable = true;
     fcitx5.enable = true;
-    fish.enable = true;
+    fish = {
+      enable = true;
+      prependInteractiveShellInit = ''
+        set -gx PROXY http://127.0.0.1:7890
+      '';
+      appendInteractiveShellInit = ''
+        setproxy
+      '';
+    };
     git.enable = true;
     gnome = {
       enable = true;

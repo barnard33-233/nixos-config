@@ -9,11 +9,9 @@ let
 in
 {
   home.packages = with pkgs; [
-    firefox
     chromium
 
     spotify 
-    netease-cloud-music-gtk
     obsidian
     zotero
 
@@ -24,7 +22,6 @@ in
     vlc
 
     wireshark
-    dosbox
     localsend
 
     # im
@@ -32,16 +29,12 @@ in
     telegram-desktop
     feishu
 
-    xddxdd.baidunetdisk
-
     # music
     pkgs-musescore.musescore
     reaper
-    metronome
-    lingot
 
     # games
-    lutris
+    # lutris
 
     # wine
     # (wineWowPackages.full.override {
@@ -49,11 +42,6 @@ in
     #   mingwSupport = true;
     # })
     # winetricks
-
-    # i want to try:
-    # code-cursor
-    # codex
-    # claude-code
 
     gimp-with-plugins
 
