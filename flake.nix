@@ -64,6 +64,10 @@
       url = "github:w4/bin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -76,6 +80,7 @@
     paste-bin,
     disko,
     nixos-facter-modules,
+    sops-nix,
     ...
     }@inputs:
   {
@@ -103,6 +108,7 @@
         system = "x86_64-linux";
         modules = [
           disko.nixosModules.disko
+          sops-nix.nixosModules.sops
           ./machine/dmit-la-00/host/configuration.nix
         ];
         specialArgs = {inherit inputs; };

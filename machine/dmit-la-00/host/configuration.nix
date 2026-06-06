@@ -10,6 +10,7 @@
     ./caddy.nix
     ./cloud-init.nix
     ./paste-bin.nix
+    ./sops.nix
   ];
 
   nix = {

@@ -1,0 +1,10 @@
+keys:
+  - &tang age16eyl5f4ht8gu2vu45627g2nkn3fymhju6m08hxc5kdy58mn2wgvssrktas
+  - &dmit-la-00 age1ef8x68vqh207tm7r35dtaak4vk7e8rcfxhv3czf0h7dwanean9cswru7tg
+
+creation_rules:
+  - path_regex: machine/dmit-la-00/secrets.yaml
+    key_groups:
+      - age:
+        - *tang
+        - *dmit-la-00

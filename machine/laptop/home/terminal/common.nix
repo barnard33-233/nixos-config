@@ -62,6 +62,11 @@
     # AI-Agent
     claude-code
     opencode
+
+    # secrets:
+    gnupg
+    sops
+    age
   ];
   home.sessionVariables.EDITOR = "nvim";
 }
