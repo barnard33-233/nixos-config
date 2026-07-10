@@ -16,4 +16,5 @@
     };
     # use default cloud_{init, config, final}_modules now to have a try...
   };
+  services.qemuGuest.enable = true;
 }
