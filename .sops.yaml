@@ -8,3 +8,8 @@ creation_rules:
       - age:
         - *tang
         - *dmit-la-00
+  - path_regex: modules/nixos/secrets.yaml
+    key_groups:
+      - age:
+        - *tang
+        - *dmit-la-00

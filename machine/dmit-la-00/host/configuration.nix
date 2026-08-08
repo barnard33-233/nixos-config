@@ -11,6 +11,7 @@
     ./cloud-init.nix
     ./paste-bin.nix
     ./sops.nix
+    ../../../modules/nixos
   ];
 
   nix = {
@@ -73,7 +74,7 @@
   };
 
   networking = {
-    firewall.allowedTCPPorts = [ 22 80 443 10022 ];
+    firewall.allowedTCPPorts = [ 22 80 443 10022 8443 ];
     useDHCP = false;
   };
 
@@ -84,6 +85,8 @@
     htop
     fastfetch
     iperf3
+    tmux
+    sing-box
   ]);
   
   swapDevices = [
@@ -93,5 +96,10 @@
     }
   ];
 
+  # own modules
+  custom.sing-box = {
+    enable = true;
+    fakeServerName = "bin.mossite.homes";
+  };
   system.stateVersion = "23.05";
 }

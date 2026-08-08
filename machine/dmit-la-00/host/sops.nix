@@ -4,7 +4,8 @@
     defaultSopsFile = ../secrets.yaml;
     age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
     secrets = {
-      "hello" = {};
+      "proxy-vlr-private-key" = {};
+      "proxy-vlr-shortid" = {};
     };
   };
 }
