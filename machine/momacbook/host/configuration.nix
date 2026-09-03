@@ -1,5 +1,9 @@
 { self, pkgs, ...}:
 {
+  imports = [
+    ./nix-homebrew.nix
+    ./homebrew.nix
+  ];
   environment.systemPackages = with pkgs; [
     vim
     git
@@ -12,6 +16,8 @@
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
+
+  system.primaryUser = "mo";
 
   users.users.mo = {
     name = "mo";

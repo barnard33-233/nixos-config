@@ -68,6 +68,17 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+    };
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -81,6 +92,9 @@
     disko,
     nixos-facter-modules,
     sops-nix,
+    nix-homebrew,
+    homebrew-core,
+    homebrew-cask,
     ...
     }@inputs:
   {
@@ -113,6 +127,7 @@
             };
           }
         ];
+        specialArgs = {inherit inputs; };
       };
     };
 
