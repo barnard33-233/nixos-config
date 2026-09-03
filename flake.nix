@@ -99,6 +99,21 @@
           }
         ];
       };
+
+      # Macbook pro m5 configuration
+      momacbook = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./machine/momacbook/host/configuration.nix
+          home-manager.darwinModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.mo = import ./machine/momacbook/home/home.nix;
+              extraSpecialArgs = { inherit inputs; };
+            };
+          }
+        ];
+      };
     };
 
     nixosConfigurations = {
