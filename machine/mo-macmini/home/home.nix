@@ -17,6 +17,8 @@
     alacritty = {
       enable = true;
       defaultTerminal = false;
+      shell = "zsh";
+      shellArgs = [ "-l" "-c" "exec fish" ];
     };
     chromium.enable = false;
     direnv.enable = true;

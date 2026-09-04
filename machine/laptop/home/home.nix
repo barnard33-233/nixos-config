@@ -24,6 +24,7 @@
     alacritty = {
       enable = true;
       defaultTerminal = true;
+      shell = "fish";
     };
     chromium = {
       enable = true;
