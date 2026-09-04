@@ -34,9 +34,6 @@ family = "FiraCode Nerd Font"
 history = 2000
 multiplier = 10
 
-[terminal.shell]
-program = "fish"
-
 [window]
 dynamic_padding = false
 startup_mode = "Windowed"
