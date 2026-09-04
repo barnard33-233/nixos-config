@@ -12,6 +12,7 @@
     casks = [
       "visual-studio-code"
       "claude-code@latest"
+      "squirrel-app"
     ];
 
     onActivation = {
