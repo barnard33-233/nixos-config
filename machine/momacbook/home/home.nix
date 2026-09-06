@@ -23,7 +23,12 @@
     chromium.enable = false;
     direnv.enable = true;
     fcitx5.enable = false;
-    fish.enable = true;
+    fish = {
+      enable = true;
+      appendInteractiveShellInit = ''
+        /opt/homebrew/bin/brew shellenv | source
+      '';
+    };
     git.enable = true;
     gnome.enable = false;
     vscode.enable = false;
