@@ -123,6 +123,10 @@
     dates = "04:00";
     options = "--delete-older-than 15d";
   };
+
+  # Enable tailscale on this machine.
+  # Note: 100.64.0.0/10 should be exclude by clash tun.
+  services.tailscale.enable = true;
   
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -217,6 +221,9 @@
   };
 
   programs.wireshark.enable = true;
+
+  custom.sing-box.enable = false;
+
 
   nixpkgs.config.permittedInsecurePackages = [
     "electron-11.5.0"

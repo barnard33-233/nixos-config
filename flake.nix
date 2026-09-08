@@ -121,6 +121,7 @@
           ./machine/laptop/host/configuration.nix
           nixos-hardware.nixosModules.asus-zephyrus-ga503
           nix-flatpak.nixosModules.nix-flatpak
+          sops-nix.nixosModules.sops
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
