@@ -3,5 +3,6 @@
   imports = [
     ./common.nix
     ./shell.nix
+    ./docker.nix
   ];
 }
