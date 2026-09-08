@@ -127,6 +127,16 @@
   # Enable tailscale on this machine.
   # Note: 100.64.0.0/10 should be exclude by clash tun.
   services.tailscale.enable = true;
+
+  services.openssh = {
+      enable = true;
+      ports = [ 10022 ];
+      settings = {
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+        PermitRootLogin = "no";
+      };
+  };
   
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
