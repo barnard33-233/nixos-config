@@ -36,9 +36,6 @@
       prependInteractiveShellInit = ''
         set -gx PROXY http://127.0.0.1:7890
       '';
-      appendInteractiveShellInit = ''
-        setproxy
-      '';
     };
     git.enable = true;
     gnome = {
