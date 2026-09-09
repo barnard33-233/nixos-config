@@ -13,6 +13,7 @@
       "visual-studio-code"
       "claude-code@latest"
       "squirrel-app"
+      "tailscale-app"
     ];
 
     onActivation = {
