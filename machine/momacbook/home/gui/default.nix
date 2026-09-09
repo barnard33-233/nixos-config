@@ -20,5 +20,7 @@ in
 
     # im
     telegram-desktop
+
+    zotero
   ];
 }
