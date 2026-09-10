@@ -25,13 +25,10 @@ in
       (lib.mkIf cfg.enableExtensions (with pkgs.gnomeExtensions;[
         appindicator
         user-themes
-        # custom-accent-colors
         removable-drive-menu
         legacy-gtk3-theme-scheme-auto-switcher
         system-monitor
-        # x11-gestures
         alttab-mod
-        # blur-my-shell
         dash-to-dock
         gnome-40-ui-improvements
         space-bar
@@ -104,19 +101,16 @@ in
         disable-user-extensions = false;
         enabled-extensions = lib.mkIf cfg.enableExtensions [
           "legacyschemeautoswitcher@joshimukul29.gmail.com"
-          # "x11gestures@joseexposito.github.io"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
           "alttab-mod@leleat-on-github"
           "gnome-ui-tune@itstime.tech"
           "gradienttopbar@pshow.org"
           "appindicatorsupport@rgcjonas.gmail.com"
-          # "custom-accent-colors@demiskp"
           "dash-to-dock@micxgx.gmail.com"
           "space-bar@luchrioh"
           "trayIconsReloaded@selfmade.pl"
           "drive-menu@gnome-shell-extensions.gcampax.github.com"
           "system-monitor@gnome-shell-extensions.gcampax.github.com"
-          # "blur-my-shell@aunetx" 
           "kimpanel@kde.org"
         ];
         favorite-apps = cfg.favoriteApps;
