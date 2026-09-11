@@ -62,6 +62,17 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+    };
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -74,6 +85,9 @@
     paste-bin,
     disko,
     sops-nix,
+    nix-homebrew,
+    homebrew-core,
+    homebrew-cask,
     ...
     }@inputs:
   {
@@ -91,6 +105,22 @@
             }; 
           }
         ];
+      };
+
+      # Macbook pro m5 configuration
+      momacbook = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./machine/momacbook/host/configuration.nix
+          home-manager.darwinModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.mo = import ./machine/momacbook/home/home.nix;
+              extraSpecialArgs = { inherit inputs; };
+            };
+          }
+        ];
+        specialArgs = {inherit inputs; };
       };
     };
 

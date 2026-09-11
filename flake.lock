@@ -1,5 +1,54 @@
 {
   "nodes": {
+    "brew-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786945682,
+        "narHash": "sha256-VBESSoJccikdhxh3vp3SQeG7cZXTOulMvVkoSqNDEhs=",
+        "owner": "Homebrew",
+        "repo": "brew",
+        "rev": "5b90e281d4e0c8fbd6ca4d8358276fb305b8d0bd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Homebrew",
+        "ref": "6.0.18",
+        "repo": "brew",
+        "type": "github"
+      }
+    },
+    "cachyos-kernel": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778649404,
+        "narHash": "sha256-LwRT4Wn48IPn674TMnrckayCioF0iMGYqE7bi/256/k=",
+        "owner": "CachyOS",
+        "repo": "linux-cachyos",
+        "rev": "6544eeb1694d6790292156dc300f149d14bc5210",
+        "type": "github"
+      },
+      "original": {
+        "owner": "CachyOS",
+        "repo": "linux-cachyos",
+        "type": "github"
+      }
+    },
+    "cachyos-kernel-patches": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778649239,
+        "narHash": "sha256-dNaGAK1lcop+yLsJzjlzSEF2YqBQYvIAKMxhaSqtxB0=",
+        "owner": "CachyOS",
+        "repo": "kernel-patches",
+        "rev": "ba7b8b92f1906de3742dadcbe2d032b5275da891",
+        "type": "github"
+      },
+      "original": {
+        "owner": "CachyOS",
+        "repo": "kernel-patches",
+        "type": "github"
+      }
+    },
     "devshell": {
       "inputs": {
         "flake-utils": [
@@ -232,6 +281,38 @@
         "type": "github"
       }
     },
+    "homebrew-cask": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788417012,
+        "narHash": "sha256-GoCF/TK7txU0zPIrSkXXzJHXos1cgYqmsu13iYy3/cs=",
+        "owner": "homebrew",
+        "repo": "homebrew-cask",
+        "rev": "7dbb3bb22da39a0d1df92b2fe609aab1214eaf53",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-cask",
+        "type": "github"
+      }
+    },
+    "homebrew-core": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788418327,
+        "narHash": "sha256-15xarBNFrAvk1t86d+QLkwGj4EkfG66bdVbbCMVR0k0=",
+        "owner": "homebrew",
+        "repo": "homebrew-core",
+        "rev": "a5a810921bccf1539047aa60c4d70825e7a72f31",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "repo": "homebrew-core",
+        "type": "github"
+      }
+    },
     "linyinfeng-717ab9baaaca4fe6ae7dfd037a480de9dfce51fb": {
       "inputs": {
         "devshell": "devshell",
@@ -360,6 +441,24 @@
         "owner": "gmodena",
         "ref": "latest",
         "repo": "nix-flatpak",
+        "type": "github"
+      }
+    },
+    "nix-homebrew": {
+      "inputs": {
+        "brew-src": "brew-src"
+      },
+      "locked": {
+        "lastModified": 1787330919,
+        "narHash": "sha256-LslMncqN7uOOH5S88WZtO/EVt2HwD8ltUnfyANk+mC0=",
+        "owner": "zhaofengli",
+        "repo": "nix-homebrew",
+        "rev": "b00218e4aec0e5bf07d61a0bb13f842faa582d7b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zhaofengli",
+        "repo": "nix-homebrew",
         "type": "github"
       }
     },
@@ -684,10 +783,13 @@
       "inputs": {
         "disko": "disko",
         "home-manager": "home-manager",
+        "homebrew-cask": "homebrew-cask",
+        "homebrew-core": "homebrew-core",
         "linyinfeng-717ab9baaaca4fe6ae7dfd037a480de9dfce51fb": "linyinfeng-717ab9baaaca4fe6ae7dfd037a480de9dfce51fb",
         "mohan-nixvim": "mohan-nixvim",
         "nix-darwin": "nix-darwin",
         "nix-flatpak": "nix-flatpak",
+        "nix-homebrew": "nix-homebrew",
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
