@@ -9,7 +9,7 @@
     ./hardware-configuration.nix
     ./caddy.nix
     ./cloud-init.nix
-    ./paste-bin.nix
+    # ./paste-bin.nix
     ./sops.nix
     ../../../modules/nixos
   ];
@@ -48,9 +48,9 @@
     };
 
     journald = {
-      extraConfig = ''
-        RuntimeMaxUse=10M
-      '';
+      settings.Journal = {
+        RuntimeMaxUse="10M";
+      };
     };
   };
 
