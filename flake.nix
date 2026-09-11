@@ -17,9 +17,6 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
-    nixpkgs-2405 = {
-      url = "github:NixOS/nixpkgs/nixos-24.05";
-    };
     nixpkgs-musescore444 = {
       url = "github:NixOS/nixpkgs/ecb95bc697b31a4f2cc1852a7c5ec2fa2c04fc58";
     };
@@ -57,9 +54,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-facter-modules = {
-      url = "github:numtide/nixos-facter-modules";
-    };
     paste-bin = {
       url = "github:w4/bin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -79,7 +73,6 @@
     nixos-hardware,
     paste-bin,
     disko,
-    nixos-facter-modules,
     sops-nix,
     ...
     }@inputs:
