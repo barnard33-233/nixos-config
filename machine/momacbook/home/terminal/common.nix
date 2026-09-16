@@ -18,6 +18,7 @@
     file
     cloc
 
+    mdcat
     pdftk
     librsvg
 
