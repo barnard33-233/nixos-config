@@ -137,6 +137,16 @@
         specialArgs = {inherit inputs; };
       };
 
+      bwg-sj-00 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          disko.nixosModules.disko
+          # sops-nix.nixosModules.sops
+          ./machine/bwg-sj-00/host/configuration.nix
+        ];
+        specialArgs = {inherit inputs; };
+      };
+
       # asus-zephyrus-ga503 config
       laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
