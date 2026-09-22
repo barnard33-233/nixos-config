@@ -54,10 +54,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    paste-bin = {
-      url = "github:w4/bin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -82,7 +78,6 @@
     home-manager,
     nix-flatpak,
     nixos-hardware,
-    paste-bin,
     disko,
     sops-nix,
     nix-homebrew,
