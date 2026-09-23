@@ -76,6 +76,13 @@
 
   networking = {
     firewall.allowedTCPPorts = [ 22 80 443 10022 8443 ];
+    # 24996 - 24999 are reserved for temporary services, such as iperf3. 
+    firewall.allowedTCPPortRanges = [
+      {from = 24996; to = 24999;}
+    ];
+    firewall.allowedUDPPortRanges = [
+      {from = 24996; to = 24999;}
+    ];
     useDHCP = false;
   };
 
