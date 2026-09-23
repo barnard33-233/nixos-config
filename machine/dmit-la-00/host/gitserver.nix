@@ -1,4 +1,4 @@
-{sld, ...}: {
+{sld, lib, config, ...}: {
   services.forgejo = {
     enable = true;
     database.type = "sqlite3";
@@ -19,6 +19,7 @@
         DEFAULT_ACTIONS_URL = "github";
       };
       mailer.ENABLED = false;
+      server.SSH_PORT = lib.head config.services.openssh.ports;
     };
   };
 }
