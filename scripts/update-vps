@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  printf 'Usage: %s [switch|test|boot] <config>\n' "${0##*/}" >&2
+}
+
+case $# in
+  1)
+    action=switch
+    config=$1
+    ;;
+  2)
+    action=$1
+    config=$2
+    ;;
+  *)
+    usage
+    exit 2
+    ;;
+esac
+
+case $action in
+  switch|test|boot) ;;
+  *)
+    printf 'Error: unsupported action: %s\n' "$action" >&2
+    usage
+    exit 2
+    ;;
+esac
+
+case $config in
+  dmit-la-00) target=la.mossite.homes ;;
+  bwg-sj-00) target=sj.mossite.homes ;;
+  *)
+    printf 'Error: unknown VPS config: %s\n' "$config" >&2
+    usage
+    exit 2
+    ;;
+esac
+
+script_dir=$(CDPATH= cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+cd "$script_dir/.."
+
+command=(nixos-rebuild "$action" --flake ".#$config" --target-host "root@$target")
+
+printf 'Command:'
+printf ' %q' "${command[@]}"
+printf '\n'
+
+"${command[@]}"
