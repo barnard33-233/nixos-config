@@ -2,7 +2,7 @@
   services.caddy = {
     enable = true;
     virtualHosts = {
-      "bin.${sld}" = {
+      "ci.${sld}" = {
         extraConfig = ''
           reverse_proxy localhost:8080
         '';

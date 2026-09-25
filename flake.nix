@@ -1,17 +1,17 @@
 {
   description = "My first Nix-flake configuration.";
 
-  nixConfig = {
-    substituters = [
-      # "https://mirrors.cernet.edu.cn/nix-channels/store"
-      "https://cache.nixos.org"
-      "https://nix-community.cachix.org"
-    ];
-    trusted-public-keys = [
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-    ];
-  };
+  # nixConfig = {
+  #   substituters = [
+  #     # "https://mirrors.cernet.edu.cn/nix-channels/store"
+  #     "https://cache.nixos.org"
+  #     "https://nix-community.cachix.org"
+  #   ];
+  #   trusted-public-keys = [
+  #       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+  #       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+  #   ];
+  # };
 
   inputs = {
     nixpkgs = {
@@ -136,7 +136,7 @@
         system = "x86_64-linux";
         modules = [
           disko.nixosModules.disko
-          # sops-nix.nixosModules.sops
+          sops-nix.nixosModules.sops
           ./machine/bwg-sj-00/host/configuration.nix
         ];
         specialArgs = {inherit inputs; };

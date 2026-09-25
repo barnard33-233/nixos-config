@@ -40,6 +40,7 @@
     pciutils
     iperf3
     mtr
+    httping
 
     tpm2-tools
 

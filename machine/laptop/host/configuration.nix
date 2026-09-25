@@ -189,13 +189,6 @@
   # TODO: idk why...
   systemd.services.NetworkManager-wait-online.enable = false;
 
-  systemd.services.nix-daemon.environment = {
-    http_proxy = "http://127.0.0.1:7890";
-    https_proxy = "http://127.0.0.1:7890";
-    all_proxy = "http://127.0.0.1:7890";
-  };
-
-
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -242,7 +235,8 @@
   system.copySystemConfiguration = false;
 
   nix.settings.substituters = [
-    "https://mirrors.cernet.edu.cn/nix-channels/store?priority=20"
+    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=10"
+    "https://aseipp-nix-cache.global.ssl.fastly.net?priority=20"
   ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,

@@ -6,9 +6,10 @@
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     ./hardware-configuration.nix
-    # ./caddy.nix
+    ./caddy.nix
     # ./cloud-init.nix
-    # ./sops.nix
+    ./sops.nix
+    ./ci.nix
     # ../../../modules/nixos
   ];
 
