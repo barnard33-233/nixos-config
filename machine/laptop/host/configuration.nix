@@ -235,7 +235,8 @@
   system.copySystemConfiguration = false;
 
   nix.settings.substituters = [
-    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=10"
+    "https://mirrors.ustc.edu.cn/nix-channels/store?priority=10"
+    "https://mirror.sjtu.edu.cn/nix-channels/store?priority=10"
     "https://aseipp-nix-cache.global.ssl.fastly.net?priority=20"
   ];
 
