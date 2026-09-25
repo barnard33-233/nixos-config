@@ -10,16 +10,8 @@
     # ./cloud-init.nix
     ./sops.nix
     ./ci.nix
-    # ../../../modules/nixos
+    ../../../modules/nixos
   ];
-
-  nix = {
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 7d";
-    };
-  };
 
   boot.loader.grub = {
     enable = true;
@@ -29,34 +21,11 @@
     # efiInstallAsRemovable = true;
   };
 
-  boot.kernelParams = [
-    "audit=0"
-    "net.ifnames=0"
-  ];
-
-  # programs = {
-  #   mosh = {
-  #     enable = true;
-  #     openFirewall = true;
-  #   };
-  # };
-  
   # basic services
   services = {
     openssh = {
       enable = true;
       ports = [ 10022 ];
-      settings = {
-        PasswordAuthentication = false;
-        KbdInteractiveAuthentication = false;
-        PermitRootLogin = "prohibit-password";
-      };
-    };
-
-    journald = {
-      settings.Journal = {
-        RuntimeMaxUse="10M";
-      };
     };
   };
 
@@ -80,17 +49,11 @@
   };
 
   networking = {
-    firewall.allowedTCPPorts = [ 22 80 443 10022 8443 ];
+    firewall.allowedTCPPorts = [ 8443 ];
   };
 
   environment.systemPackages = map lib.lowPrio (with pkgs; [
-    vim
-    curl
-    gitMinimal
-    htop
-    fastfetch
     iperf3
-    tmux
     sing-box
   ]);
   
@@ -102,9 +65,10 @@
   ];
 
   # own modules
-  # custom.sing-box = {
-  #   enable = true;
-  #   fakeServerName = "bin.mossite.homes";
-  # };
+  custom.sing-box = {
+    enable = false;
+    fakeServerName = "bin.mossite.homes";
+  };
+
   system.stateVersion = "26.05";
 }

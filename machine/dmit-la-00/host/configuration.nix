@@ -15,43 +15,17 @@
     ../../../modules/nixos
   ];
 
-  nix = {
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 7d";
-    };
-  };
-
   boot.loader.grub = {
     efiSupport = false;
     configurationLimit = 3;
     # efiInstallAsRemovable = true;
   };
 
-  programs = {
-    mosh = {
-      enable = true;
-      openFirewall = true;
-    };
-  };
-  
   # basic services
   services = {
     openssh = {
       enable = true;
       ports = [ 10022 ];
-      settings = {
-        PasswordAuthentication = false;
-        KbdInteractiveAuthentication = false;
-        PermitRootLogin = "prohibit-password";
-      };
-    };
-
-    journald = {
-      settings.Journal = {
-        RuntimeMaxUse="10M";
-      };
     };
   };
 
@@ -75,27 +49,14 @@
   };
 
   networking = {
-    firewall.allowedTCPPorts = [ 22 80 443 10022 8443 ];
-    # 24996 - 24999 are reserved for temporary services, such as iperf3. 
-    firewall.allowedTCPPortRanges = [
-      {from = 24996; to = 24999;}
-    ];
-    firewall.allowedUDPPortRanges = [
-      {from = 24996; to = 24999;}
-    ];
+    firewall.allowedTCPPorts = [ 8443 ];
     useDHCP = false;
   };
 
-  environment.systemPackages = map lib.lowPrio (with pkgs; [
-    vim
-    curl
-    gitMinimal
-    htop
-    fastfetch
+  environment.systemPackages = with pkgs; [
     iperf3
-    tmux
     sing-box
-  ]);
+  ];
   
   swapDevices = [
     {
@@ -104,7 +65,7 @@
     }
   ];
 
-  # own modules
+  # personal modules
   custom.sing-box = {
     enable = true;
     fakeServerName = "bin.mossite.homes";

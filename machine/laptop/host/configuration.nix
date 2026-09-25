@@ -119,7 +119,7 @@
   services.flatpak.enable = true;
   nixpkgs.config.allowUnfree = true;
   nix.gc = {
-    automatic = true;
+    automatic = false;
     dates = "04:00";
     options = "--delete-older-than 15d";
   };

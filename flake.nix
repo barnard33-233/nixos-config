@@ -84,7 +84,7 @@
     homebrew-core,
     homebrew-cask,
     ...
-    }@inputs:
+  }@inputs:
   {
     darwinConfigurations = {
       # Mac mini m4 configuration
@@ -128,16 +128,18 @@
           disko.nixosModules.disko
           sops-nix.nixosModules.sops
           ./machine/dmit-la-00/host/configuration.nix
+          ./profiles/vps.nix
         ];
         specialArgs = {inherit inputs; };
       };
 
+      # bwg config
       bwg-sj-00 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          disko.nixosModules.disko
           sops-nix.nixosModules.sops
           ./machine/bwg-sj-00/host/configuration.nix
+          ./profiles/vps.nix
         ];
         specialArgs = {inherit inputs; };
       };
