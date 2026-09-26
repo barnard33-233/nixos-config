@@ -35,6 +35,7 @@
       hashedPassword = "!";
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIs85N96/ZOfoJFQ3nxMzWSbmC2IwQ51R64/+4FsRC8M htang0203@gmail.com"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINFDB5C5KPEwLBU+2rYRcQGBs7A8l1o/ijJ46whO75Fu htang0203@gmail.com"
       ];
     };
     mo = {
@@ -44,6 +45,7 @@
       group = "mo";
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDqszaMPp24YWX6k3FnFPApbSV7q5+S/lwK/DtGgO4yA htang0203@gmail.com"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDvKPAMcB0E3Z5ll47hKf15m48pGvTKiv4TIoozVw56Y htang0203@gmail.com"
       ];
     };
   };

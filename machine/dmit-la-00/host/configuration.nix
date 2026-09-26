@@ -35,6 +35,7 @@
       hashedPassword = "!";
       openssh.authorizedKeys.keys = [
         "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2SL21V7FPVzxm/bgT8Jfz9iaMRE1D3YA4bm4Ukml6kj89hhWUHLnyr94zRZd//ZQ50MoO8VK5tF5UmBadyLACRqt+LK7l6yWmXokLC0B+NTJ2MEaHOl03BduUJK7cClsnpDNK55uXqggvZfitIxLUkn9FCVa3FH1qrY9TOokB3HQcxV/4S0FXRnn8Bu2s9koFjbEJvT6dnwXHjgDEShNqpMNMcf6DL9ck6I1WWS0/ZnDeVYgmzLEPbN7bZlPc/xGUTwZZ8l3WVrPQmR5FD4bR4vqLAMhNu8B27u5Kmr5Dkbw6X5RrPAlS3SBrmohtZ2z42sN4XKOfUYvrU/UfYS8r"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINFDB5C5KPEwLBU+2rYRcQGBs7A8l1o/ijJ46whO75Fu htang0203@gmail.com"
       ];
     };
     mo = {
@@ -44,6 +45,7 @@
       group = "mo";
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDqszaMPp24YWX6k3FnFPApbSV7q5+S/lwK/DtGgO4yA htang0203@gmail.com"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDvKPAMcB0E3Z5ll47hKf15m48pGvTKiv4TIoozVw56Y htang0203@gmail.com"
       ];
     };
   };
