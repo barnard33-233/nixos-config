@@ -93,7 +93,18 @@ in
 
     hostPackages = lib.mkOption {
       type = lib.types.listOf lib.types.package;
-      default = with pkgs; [ bash coreutils curl gawk gitMinimal gnused nodejs wget ];
+      default = with pkgs; [
+        bash
+        coreutils
+        curl
+        gawk
+        gitMinimal
+        gnused
+        nodejs
+        wget
+        nix
+        python3
+      ];
       defaultText = lib.literalExpression ''
         with pkgs; [ bash coreutils curl gawk gitMinimal gnused nodejs wget ]
       '';
