@@ -100,6 +100,7 @@
             }; 
           }
         ];
+        specialArgs = {inherit inputs; };
       };
 
       # Macbook pro m5 configuration

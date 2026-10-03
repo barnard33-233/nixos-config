@@ -1,5 +1,9 @@
 { self, pkgs, ...}:
 {
+  imports = [
+    ./nix-homebrew.nix
+    ./homebrew.nix
+  ];
   environment.systemPackages = with pkgs; [
     vim
     git
@@ -17,6 +21,8 @@
     name = "mohan";
     home = "/Users/mohan";
   };
+
+  system.primaryUser = "mohan";
 
   fonts.packages = with pkgs; [
     source-sans

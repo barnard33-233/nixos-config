@@ -13,7 +13,6 @@ in
     firefox
     google-chrome
 
-    spotify 
     obsidian
 
     thunderbird
