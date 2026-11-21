@@ -45,11 +45,20 @@
     htop
     fastfetch
     tmux
+    nexttrace
   ];
 
   # common kernel settings
-  boot.kernelParams = [
-    "audit=0"
-    "net.ifnames=0"
-  ];
+  boot = {
+    kernelParams = [
+      "audit=0"
+      "net.ifnames=0"
+    ];
+    kernelModules = [ "tcp_bbr" ];
+
+    kernel.sysctl = {
+      "net.core.default_qdisc" = "fq";
+      "net.ipv4.tcp_congestion_control" = "bbr";
+    };
+  };
 }
