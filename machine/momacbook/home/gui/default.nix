@@ -22,5 +22,7 @@ in
     telegram-desktop
 
     zotero
+
+    musescore
   ];
 }

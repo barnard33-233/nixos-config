@@ -25,6 +25,8 @@
     htop
     dust
 
+    mtr
+
     tealdeer
 
     ffmpeg

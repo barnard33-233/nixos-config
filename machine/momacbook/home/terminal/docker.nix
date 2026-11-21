@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   home.packages = with pkgs; [
     docker
@@ -19,6 +19,15 @@
 
         arch = "host";
         runtime = "docker";
+        vmType = "vz";
+        mountType = "virtiofs";
+        forwardAgent = false;
+        mounts = [
+          {
+            location = config.home.homeDirectory;
+            writable = true;
+          }
+        ];
 
         autoActivate = true;
 

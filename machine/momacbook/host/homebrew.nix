@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   homebrew = {
     enable = true;
@@ -7,6 +7,8 @@
       "python@3.12"
       "claude-code-router"
       "opencode"
+      "gromgit/fuse/ntfs-3g-mac"
+      "pi-coding-agent"
     ];
 
     casks = [
@@ -14,6 +16,12 @@
       "claude-code@latest"
       "squirrel-app"
       "tailscale-app"
+      "reaper"
+      "onlyoffice"
+      "easydict"
+      "drawio"
+      "steam"
+      "macfuse"
     ];
 
     onActivation = {
@@ -22,6 +30,6 @@
       cleanup = "none";
     };
 
-    # taps = builtins.attrNames config.nix-homebrew.taps;
+    taps = builtins.attrNames config.nix-homebrew.taps;
   };
 }

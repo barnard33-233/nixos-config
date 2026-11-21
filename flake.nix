@@ -69,6 +69,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    homebrew-fuse = {
+      url = "github:gromgit/homebrew-fuse";
+      flake = false;
+    };
   };
 
   outputs = {

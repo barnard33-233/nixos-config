@@ -13,6 +13,7 @@
     taps = {
       "homebrew/homebrew-core" = inputs.homebrew-core;
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
+      "gromgit/homebrew-fuse" = inputs.homebrew-fuse;
     };
 
     mutableTaps = false;
