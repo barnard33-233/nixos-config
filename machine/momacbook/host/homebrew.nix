@@ -8,7 +8,6 @@
       "claude-code-router"
       "opencode"
       "gromgit/fuse/ntfs-3g-mac"
-      "pi-coding-agent"
     ];
 
     casks = [

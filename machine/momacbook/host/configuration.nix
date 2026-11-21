@@ -52,4 +52,9 @@
       "https://mirrors.cernet.edu.cn/nix-channels/store?priority=20"
     ];
   };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    # Temporary: Zotero 10 still requires Firefox ESR 140.
+    "firefox-esr-140-bin-unwrapped-140.17.0esr"
+  ];
 }
