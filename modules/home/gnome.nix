@@ -32,7 +32,7 @@ in
         dash-to-dock
         gnome-40-ui-improvements
         space-bar
-        tray-icons-reloaded
+        # tray-icons-reloaded
         kimpanel
       ]))
     ];
@@ -108,7 +108,7 @@ in
           "appindicatorsupport@rgcjonas.gmail.com"
           "dash-to-dock@micxgx.gmail.com"
           "space-bar@luchrioh"
-          "trayIconsReloaded@selfmade.pl"
+          # "trayIconsReloaded@selfmade.pl"
           "drive-menu@gnome-shell-extensions.gcampax.github.com"
           "system-monitor@gnome-shell-extensions.gcampax.github.com"
           "kimpanel@kde.org"

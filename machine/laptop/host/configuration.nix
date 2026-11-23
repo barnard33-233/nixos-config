@@ -145,7 +145,7 @@
     curl
     clash-meta
 
-    virtualbox
+    # virtualbox
     virt-manager
     qemu
     lshw
@@ -206,9 +206,9 @@
       };
     };
 
-    virtualbox = {
-      host.enable = true;
-    };
+    # virtualbox = {
+    #   host.enable = true;
+    # };
 
     docker = {
       enable = true;
@@ -230,6 +230,7 @@
 
   nixpkgs.config.permittedInsecurePackages = [
     "electron-11.5.0"
+    "firefox-esr-140-bin-unwrapped-140.17.0esr"
   ];
 
   system.copySystemConfiguration = false;
