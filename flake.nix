@@ -73,6 +73,9 @@
       url = "github:gromgit/homebrew-fuse";
       flake = false;
     };
+    pi = {
+      url = "github:earendil-works/pi/stable";
+    };
   };
 
   outputs = {
