@@ -59,7 +59,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew";
+      url = "github:barnard33-233/nix-homebrew";
     };
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
